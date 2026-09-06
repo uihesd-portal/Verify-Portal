@@ -308,6 +308,7 @@
       }
     }
 
+    // STRICT ISOLATED VIEW WHEN QR IS SCANNED
     window.onload = function() {
       const urlParams = new URLSearchParams(window.location.search);
       const scanVerifyUID = urlParams.get('verify') || urlParams.get('roll');
@@ -367,7 +368,6 @@
           `;
         }
       } else {
-        renderTable();
         const params = new URLSearchParams(window.location.search);
         const v = params.get('verify') || params.get('roll');
         if (v) {

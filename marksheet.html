@@ -35,31 +35,15 @@
 
     /* ================= FULL PAGE EXPANDED A4 PORTRAIT MARKSHEET ================= */
     .marksheet-wrapper {
-      width: 794px;
-      max-width: 100%;
-      margin: 15px auto;
-      background: #ffffff;
-      padding: 14px;
-      border: 1px solid #94a3b8;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-      box-sizing: border-box;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
+      width: 794px; max-width: 100%; margin: 15px auto; background: #ffffff; padding: 14px; border: 1px solid #94a3b8; box-shadow: 0 10px 30px rgba(0,0,0,0.12); box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
     }
     .marksheet-inner {
-      border: 5px double #1e3a8a;
-      outline: 2px solid #b45309;
-      outline-offset: -3px;
-      padding: 28px 30px 24px;
-      position: relative;
-      background: #fffdfa;
-      background-image: radial-gradient(#1e3a8a 0.3px, transparent 0.3px);
-      background-size: 16px 16px;
-      box-sizing: border-box;
+      border: 5px double #1e3a8a; outline: 2px solid #b45309; outline-offset: -3px; padding: 28px 30px 24px; position: relative; background: #fffdfa;
+      background-image: radial-gradient(#1e3a8a 0.3px, transparent 0.3px); background-size: 16px 16px; box-sizing: border-box;
     }
     .marksheet-inner::before {
-      content: "STATEMENT OF MARKS"; position: absolute; top: 52%; left: 50%;
-      transform: translate(-50%, -50%) rotate(-25deg); font-size: 4.2rem; font-weight: 900;
+      content: "STATEMENT OF MARKS"; position: absolute; top: 52%; left: 50%; transform: translate(-50%, -50%) rotate(-25deg); font-size: 4.2rem; font-weight: 900;
       color: rgba(30, 58, 138, 0.03); pointer-events: none; white-space: nowrap; z-index: 1;
     }
     .marksheet-inner::after {
@@ -318,7 +302,7 @@
         const isolatedBox = document.getElementById("qrScanIsolatedContainer");
         isolatedBox.style.display = "flex";
 
-        const db = getDatabase();
+        const db = getStudentDatabase();
         const s = db.find(item => item.uniqueId.toUpperCase() === scanVerifyUID.trim().toUpperCase() || item.rollNo.toUpperCase() === scanVerifyUID.trim().toUpperCase());
 
         if (s) {

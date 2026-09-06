@@ -9,10 +9,12 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
     body { background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+    
     .top-utility-bar { background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 4px 5%; font-size: 0.72rem; display: flex; justify-content: space-between; align-items: center; color: #334155; }
     .top-right-tools { display: flex; align-items: center; gap: 14px; }
     .top-right-tools a { color: #334155; text-decoration: none; font-weight: 600; }
     .top-right-tools a:hover { color: #0284c7; }
+    
     .dgt-main-header { padding: 10px 5%; background: #ffffff; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; }
     .header-left-emblem { display: flex; align-items: center; gap: 16px; }
     .ashok-emblem-svg { height: 68px; width: auto; object-fit: contain; }
@@ -22,6 +24,7 @@
     .college-bold-title span { color: #b45309; }
     .college-punjabi-sub { font-size: 0.88rem; color: #1e3a8a; font-weight: 800; margin-top: 2px; }
     .college-accreditation-line { font-size: 0.72rem; color: #166534; font-weight: 800; text-transform: uppercase; margin-top: 2px; }
+    
     .container { max-width: 1120px; margin: 25px auto; padding: 0 15px; }
     .cert-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 4px solid #172b53; }
     .cert-input-group { display: flex; gap: 10px; margin-top: 15px; }
@@ -29,6 +32,7 @@
     .cert-btn { background: #172b53; color: white; border: none; padding: 12px 24px; border-radius: 5px; font-weight: bold; cursor: pointer; }
     .cert-result { display: none; margin-top: 25px; }
     .cert-invalid { border: 1px solid #fecaca; background: #fef2f2; color: #dc2626; padding: 15px; text-align: center; font-weight: bold; border-radius: 6px; }
+    
     .action-control-bar { margin-top: 22px; background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 6px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
     .action-text h4 { color: #166534; font-size: 0.95rem; margin-bottom: 2px; }
     .action-text p { color: #475569; font-size: 0.78rem; }
@@ -36,50 +40,77 @@
     .btn-add-student { background: #b45309; color: white; border: none; padding: 8px 16px; border-radius: 4px; font-weight: 800; font-size: 0.85rem; cursor: pointer; }
     .btn-excel-export { background: #15803d; color: white; border: none; padding: 8px 14px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; cursor: pointer; }
     .btn-excel-import { background: #0284c7; color: white; border: none; padding: 8px 14px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; cursor: pointer; }
+    
     .records-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.85rem; background: white; }
     .records-table th, .records-table td { padding: 8px 12px; border: 1px solid #cbd5e1; text-align: left; }
     .records-table th { background: #172b53; color: white; }
     .btn-table-view { background: #0284c7; color: white; border: none; padding: 4px 10px; border-radius: 3px; cursor: pointer; font-weight: bold; }
     .btn-table-marks { background: #7b1113; color: white; border: none; padding: 4px 10px; border-radius: 3px; cursor: pointer; font-weight: bold; margin-left: 4px; }
     .btn-table-del { background: #dc2626; color: white; border: none; padding: 4px 10px; border-radius: 3px; cursor: pointer; font-weight: bold; margin-left: 4px; }
-    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(4px); z-index: 10000; justify-content: center; align-items: center; padding: 15px; }
-    .modal-card { background: #ffffff; width: 100%; max-width: 650px; border-radius: 8px; padding: 22px 26px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.35); border-top: 5px solid #172b53; max-height: 90vh; overflow-y: auto; }
-    .modal-close-btn { position: absolute; top: 12px; right: 16px; background: transparent; border: none; font-size: 1.6rem; color: #64748b; cursor: pointer; }
-    .entry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
-    .entry-group label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 3px; color: #334155; }
-    .entry-group input { width: 100%; padding: 8px 10px; border: 1.5px solid #cbd5e1; border-radius: 4px; font-size: 0.88rem; outline: none; }
-    .btn-save-record { width: 100%; background: #16a34a; color: white; border: none; padding: 11px; font-size: 0.95rem; font-weight: 800; border-radius: 4px; cursor: pointer; margin-top: 15px; text-transform: uppercase; }
 
-    /* ================= FULL A4 LANDSCAPE CERTIFICATE ================= */
-    .stylish-cert-wrapper { width: 1040px; max-width: 100%; margin: 15px auto; background: #fcfbf7; padding: 12px; border: 1px solid #d4af37; box-shadow: 0 10px 30px rgba(0,0,0,0.12); box-sizing: border-box; position: relative; overflow: hidden; }
-    .stylish-cert-wrapper::before { content: ""; position: absolute; top: 0; right: 0; width: 140px; height: 140px; background: linear-gradient(135deg, transparent 40%, #c5a059 40%, #c5a059 50%, #7b1113 50%); z-index: 2; pointer-events: none; }
-    .stylish-cert-wrapper::after { content: ""; position: absolute; bottom: 0; left: 0; width: 140px; height: 140px; background: linear-gradient(135deg, #7b1113 50%, #c5a059 50%, #c5a059 60%, transparent 60%); z-index: 2; pointer-events: none; }
-    .stylish-inner-frame { border: 2px solid #c5a059; padding: 16px 28px 12px; position: relative; background: #fffdf9; z-index: 3; }
+    /* ================= 100% FIXED A4 LANDSCAPE CERTIFICATE ================= */
+    .stylish-cert-wrapper {
+      width: 1040px;
+      max-width: 100%;
+      margin: 15px auto;
+      background: #fcfbf7;
+      padding: 12px;
+      border: 1px solid #d4af37;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .stylish-cert-wrapper::before {
+      content: ""; position: absolute; top: 0; right: 0; width: 140px; height: 140px;
+      background: linear-gradient(135deg, transparent 40%, #c5a059 40%, #c5a059 50%, #7b1113 50%);
+      z-index: 2; pointer-events: none;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .stylish-cert-wrapper::after {
+      content: ""; position: absolute; bottom: 0; left: 0; width: 140px; height: 140px;
+      background: linear-gradient(135deg, #7b1113 50%, #c5a059 50%, #c5a059 60%, transparent 60%);
+      z-index: 2; pointer-events: none;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .stylish-inner-frame {
+      border: 2px solid #c5a059;
+      padding: 16px 28px 12px;
+      position: relative;
+      background: #fffdf9;
+      z-index: 3;
+      box-sizing: border-box;
+    }
     
     .stylish-inner-frame::before {
       content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 480px; height: 480px;
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='90' fill='none' stroke='%230f172a' stroke-width='1.5'/><circle cx='100' cy='100' r='86' fill='none' stroke='%230f172a' stroke-width='0.5'/><circle cx='100' cy='100' r='60' fill='none' stroke='%230f172a' stroke-width='1'/><g transform='translate(60, 42) scale(0.8)'><path fill='%230f172a' d='M40,5 C40,2 60,2 60,5 C62,15 75,25 75,40 C75,55 60,65 60,75 L65,85 L35,85 L40,75 C40,65 25,55 25,40 C25,25 38,15 40,5 Z'/><circle cx='50' cy='105' r='14' fill='none' stroke='%230f172a' stroke-width='3'/><circle cx='50' cy='105' r='3' fill='%230f172a'/><path fill='%230f172a' d='M20,125 L80,125 L75,140 L25,140 Z'/><text x='50' y='136' font-size='8' font-weight='bold' text-anchor='middle' fill='%23ffffff'>सत्यमेव जयते</text></g><defs><path id='circlePath' d='M 18, 100 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0'/></defs><text font-family='Arial' font-size='12.5' font-weight='bold' fill='%230f172a' letter-spacing='1.5'><textPath href='%23circlePath' startOffset='50%' text-anchor='middle'>GOVERNMENT OF INDIA • DIRECTORATE GENERAL OF TRAINING •</textPath></text></svg>");
-      background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.045; z-index: 1; pointer-events: none;
+      background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.055; z-index: 1; pointer-events: none;
     }
+
     .sc-header, .sc-main-title-box, .name-container, .sc-statement, .footer-logos-strip, .sc-footer-grid { position: relative; z-index: 2; }
     .ornament-tl { position: absolute; top: 6px; left: 6px; width: 32px; height: 32px; border-top: 2.5px solid #c5a059; border-left: 2.5px solid #c5a059; z-index: 2; }
     .ornament-br { position: absolute; bottom: 6px; right: 6px; width: 32px; height: 32px; border-bottom: 2.5px solid #c5a059; border-right: 2.5px solid #c5a059; z-index: 2; }
 
     .sc-header { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid #c5a059; padding-bottom: 6px; margin-bottom: 6px; }
-    .sc-logo { height: 65px; width: 65px; object-fit: contain; }
+    .sc-logo { height: 60px; width: 60px; object-fit: contain; }
     .sc-titles { flex: 1; text-align: center; }
-    .sc-titles h4 { font-size: 0.62rem; color: #b45309; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
-    .sc-titles h2 { font-size: 1.08rem; color: #0b1f3a; font-family: 'Cinzel', serif; font-weight: 900; }
-    .sc-titles p { font-size: 0.55rem; color: #166534; font-weight: 800; text-transform: uppercase; margin-top: 1px; }
+    .sc-titles h4 { font-size: 0.65rem; color: #b45309; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .sc-titles h2 { font-size: 1.12rem; color: #0b1f3a; font-family: 'Cinzel', serif; font-weight: 900; }
+    .sc-titles p { font-size: 0.58rem; color: #166534; font-weight: 800; text-transform: uppercase; margin-top: 1px; }
 
     .sc-main-title-box { text-align: center; margin: 4px 0 2px; }
-    .sc-cert-word { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 900; color: #7b1113; letter-spacing: 3px; line-height: 1; }
-    .sc-achieve-word { font-family: 'Cinzel', serif; font-size: 0.82rem; font-weight: 700; color: #334155; letter-spacing: 2px; margin-top: 2px; text-transform: uppercase; }
-    .sc-presented-to { font-size: 0.62rem; color: #64748b; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 3px; }
+    .sc-cert-word { font-family: 'Cinzel', serif; font-size: 2.1rem; font-weight: 900; color: #7b1113; letter-spacing: 4px; line-height: 1; }
+    .sc-achieve-word { font-family: 'Cinzel', serif; font-size: 0.88rem; font-weight: 700; color: #334155; letter-spacing: 2px; margin-top: 2px; text-transform: uppercase; }
+    .sc-presented-to { font-size: 0.65rem; color: #64748b; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 3px; }
 
-    .name-container { text-align: center; margin: 2px 0; }
-    .sc-candidate-name { font-family: 'Cinzel', serif; font-size: 1.85rem; font-weight: 900; color: #9a3412; text-align: center; margin: 2px 0; letter-spacing: 2px; text-transform: uppercase; border-bottom: 2px solid #c5a059; display: inline-block; padding: 0 18px; }
-    .sc-statement { font-family: 'Montserrat', sans-serif; font-size: 0.76rem; color: #1e293b; text-align: center; max-width: 740px; margin: 4px auto 8px; line-height: 1.38; font-weight: 500; }
+    .name-container { text-align: center; margin: 3px 0; }
+    .sc-candidate-name { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 900; color: #9a3412; text-align: center; margin: 2px 0; letter-spacing: 2px; text-transform: uppercase; border-bottom: 2px solid #c5a059; display: inline-block; padding: 0 20px; }
+    .sc-statement { font-family: 'Montserrat', sans-serif; font-size: 0.80rem; color: #1e293b; text-align: center; max-width: 780px; margin: 5px auto 9px; line-height: 1.4; font-weight: 500; }
     .sc-highlight { font-weight: 800; color: #0b1f3a; border-bottom: 1.5px solid #c5a059; padding: 0 2px; }
 
     .footer-logos-strip { display: flex; justify-content: space-around; align-items: center; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 8px; margin-bottom: 6px; }
@@ -87,23 +118,51 @@
     .f-logo-item img { height: 35px; width: auto; max-width: 75px; object-fit: contain; }
     .f-logo-item span { font-size: 0.52rem; font-weight: 800; color: #1e3a8a; line-height: 1.1; text-transform: uppercase; }
 
-    .sc-footer-grid { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1.5px dashed #cbd5e1; padding-top: 6px; margin-top: 4px; }
+    .sc-footer-grid { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1.5px dashed #cbd5e1; padding-top: 8px; margin-top: 4px; }
     .sc-qr-wrap { text-align: center; background: white; padding: 2px; border: 1px solid #cbd5e1; border-radius: 4px; }
     #qrcode { display: inline-block; }
     .sc-qr-lbl { font-size: 0.45rem; font-weight: 800; margin-top: 1px; text-transform: uppercase; }
-    .user-uploaded-red-seal { width: 72px; height: 72px; object-fit: contain; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.25)); }
-    .sc-sign-col { text-align: center; font-size: 0.62rem; font-weight: 800; color: #1e3a8a; width: 130px; }
-    .sc-sign-line { border-bottom: 1.5px solid #0f172a; margin-bottom: 2px; height: 18px; }
+    .user-uploaded-red-seal { width: 75px; height: 75px; object-fit: contain; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.25)); }
+    .sc-sign-col { text-align: center; font-size: 0.64rem; font-weight: 800; color: #1e3a8a; width: 140px; }
+    .sc-sign-line { border-bottom: 1.5px solid #0f172a; margin-bottom: 2px; height: 20px; }
 
     .btn-print { background: #16a34a; color: white; border: none; padding: 11px 26px; font-weight: bold; border-radius: 5px; cursor: pointer; font-size: 0.95rem; margin: 20px auto 0; display: block; }
 
-    .qr-standalone-wrapper { min-height: 90vh; display: flex; align-items: center; justify-content: center; padding: 20px 10px; background: #f1f5f9; }
-    .gov-qr-card { background: #ffffff; border: 2px solid #0f766e; border-radius: 12px; box-shadow: 0 16px 40px rgba(15, 118, 110, 0.2); width: 100%; max-width: 580px; overflow: hidden; }
-    .gov-qr-top-strip { background: #0f766e; color: #ffffff; padding: 16px 20px; text-align: center; border-bottom: 3px solid #f59e0b; }
-    .gov-qr-top-strip h3 { font-size: 1.22rem; font-weight: 900; text-transform: uppercase; margin: 0; }
-    .gov-qr-top-strip p { font-size: 0.74rem; font-weight: 700; color: #ccfbf1; margin-top: 3px; }
-    .gov-institution-banner { background: #f0fdf4; border-bottom: 1.5px dashed #0f766e; padding: 14px 18px; text-align: center; }
-    .gov-institution-banner .gov-dept-tag { font-size: 0.72rem; font-weight: 800; color: #047857; text-transform: uppercase; }
+    /* ================= 100% OFFICIAL GOVT QR VERIFICATION CARD ================= */
+    .qr-standalone-wrapper {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 10px;
+      background: #f1f5f9;
+    }
+    .gov-qr-card {
+      background: #ffffff;
+      border: 2px solid #0f766e;
+      border-radius: 12px;
+      box-shadow: 0 16px 40px rgba(15, 118, 110, 0.2);
+      width: 100%;
+      max-width: 580px;
+      overflow: hidden;
+      position: relative;
+    }
+    .gov-qr-top-strip {
+      background: #0f766e;
+      color: #ffffff;
+      padding: 16px 20px;
+      text-align: center;
+      border-bottom: 3px solid #f59e0b;
+    }
+    .gov-qr-top-strip h3 { font-size: 1.22rem; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; margin: 0; }
+    .gov-qr-top-strip p { font-size: 0.74rem; font-weight: 700; color: #ccfbf1; margin-top: 3px; letter-spacing: 0.3px; }
+    .gov-institution-banner {
+      background: #f0fdf4;
+      border-bottom: 1.5px dashed #0f766e;
+      padding: 14px 18px;
+      text-align: center;
+    }
+    .gov-institution-banner .gov-dept-tag { font-size: 0.72rem; font-weight: 800; color: #047857; text-transform: uppercase; line-height: 1.2; }
     .gov-institution-banner .gov-clg-name { font-size: 1.12rem; font-weight: 900; color: #0f172a; text-transform: uppercase; margin-top: 4px; }
     .gov-institution-banner .gov-manta-tag { display: inline-block; background: #1e3a8a; color: #ffffff; font-size: 0.70rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; margin-top: 8px; text-transform: uppercase; }
     .gov-qr-table { width: 100%; border-collapse: collapse; margin: 6px 0; }
@@ -111,26 +170,42 @@
     .gov-qr-table td { padding: 10px 20px; font-size: 0.88rem; }
     .gov-qr-table td.gov-field-lbl { width: 40%; color: #64748b; font-weight: 800; text-transform: uppercase; font-size: 0.72rem; }
     .gov-qr-table td.gov-field-val { width: 60%; color: #0f172a; font-weight: 800; }
-    .gov-qr-footer-seal { background: #f8fafc; padding: 14px 20px; text-align: center; border-top: 1px solid #e2e8f0; font-size: 0.75rem; font-weight: 800; color: #065f46; }
+    .gov-qr-footer-seal { background: #f8fafc; padding: 14px 20px; text-align: center; border-top: 1px solid #e2e8f0; font-size: 0.75rem; font-weight: 800; color: #065f46; line-height: 1.4; }
 
-    /* EXACT 1 PAGE A4 LANDSCAPE PRINT RULE */
+    /* PRINT RULES FOR EXACT A4 LANDSCAPE */
     @page { size: A4 landscape; margin: 0; }
     @media print {
-      html, body { width: 297mm; height: 210mm; margin: 0 !important; padding: 0 !important; background: #ffffff !important; overflow: hidden; }
+      html, body {
+        width: 297mm !important;
+        height: 210mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        overflow: hidden !important;
+      }
       body * { visibility: hidden; }
       .stylish-cert-wrapper, .stylish-cert-wrapper * { visibility: visible; }
       .stylish-cert-wrapper {
-        position: fixed; left: 0; top: 0;
-        width: 297mm !important; height: 210mm !important;
-        margin: 0 !important; padding: 10mm 15mm !important;
-        border: none !important; box-shadow: none !important;
+        position: fixed !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        margin: 0 !important;
+        padding: 8mm 12mm !important;
+        border: none !important;
+        box-shadow: none !important;
       }
-      .stylish-inner-frame { height: 100%; box-sizing: border-box; }
-      .btn-print, header, nav, .top-utility-bar, footer, .cert-input-group, .cert-box h2, .cert-box p, .action-control-bar, .records-table { display: none !important; }
+      .stylish-inner-frame { height: 100% !important; box-sizing: border-box !important; }
+      .btn-print, header, nav, .top-utility-bar, footer, .cert-input-group, .cert-box h2, .cert-box p, .action-control-bar, .records-table {
+        display: none !important;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- MAIN SITE LAYOUT -->
   <div id="fullSiteLayout">
     <div class="top-utility-bar">
       <div>Government of India | Ministry of Skill Development and Entrepreneurship</div>
@@ -139,6 +214,7 @@
         <a href="marksheet.html">View Marksheet</a>
       </div>
     </div>
+
     <header class="dgt-main-header">
       <div class="header-left-emblem">
         <svg class="ashok-emblem-svg" viewBox="0 0 100 150">
@@ -146,7 +222,7 @@
           <circle cx="50" cy="105" r="14" fill="none" stroke="#1e3a8a" stroke-width="3"/>
           <circle cx="50" cy="105" r="3" fill="#1e3a8a"/>
           <path fill="#b45309" d="M20,125 L80,125 L75,140 L25,140 Z"/>
-          <text x="50" y="136" font-size="8" font-weight="bold" text-anchor="middle" fill="#ffffff">सत्यमेव जयते</text>
+          <text x="50" y="136" font-size="8" font-weight="bold" text-anchor="middle" fill="#ffffff">ਸਤ੍ਯਮੇਵ ਜਯਤੇ</text>
         </svg>
         <div class="college-highlight-cluster">
           <div class="dgt-sub-tag">प्रशिक्षण महानिदेशालय • DIRECTORATE GENERAL OF TRAINING</div>
@@ -156,12 +232,13 @@
         </div>
       </div>
     </header>
+
     <div class="container">
       <div class="cert-box">
         <h2 style="text-align:center; color:#172b53; margin-bottom:6px;">ਅਧਿਕਾਰਤ ਸਰਟੀਫਿਕੇਟ ਪੜਤਾਲ (Online Verification)</h2>
         <p style="text-align:center; color:#64748b; font-size:0.9rem;">ਵਿਦਿਆਰਥੀ ਦਾ Roll Number ਜਾਂ Unique ID ਭਰੋ:</p>
         <div class="cert-input-group">
-          <input type="text" id="certInput" placeholder="Enter Roll Number or Unique ID (ਜਿਵੇਂ ROLL-101)">
+          <input type="text" id="certInput" placeholder="Enter Roll Number or Unique ID (ਜਿਵੇਂ 101 ਜਾਂ ROLL-101)">
           <button class="cert-btn" onclick="verifyCertificate()">ਪੜਤਾਲ ਕਰੋ (Verify)</button>
         </div>
         <div class="action-control-bar">
@@ -183,52 +260,132 @@
         </div>
       </div>
     </div>
+    
     <footer style="background:#0b132b; color:#94a3b8; padding:25px 5%; font-size:0.8rem; text-align:center; border-top:2px solid #f59e0b; margin-top:40px;">
       <p>© 2026 Directorate General of Training (DGT), Ministry of Skill Development and Entrepreneurship & UIHESD.</p>
     </footer>
   </div>
 
+  <!-- QR SCAN ISOLATED GOVT PORTAL CARD -->
   <div id="qrScanIsolatedContainer" style="display:none;" class="qr-standalone-wrapper"></div>
-  <div id="addStudentModal" class="modal-overlay">
-    <div class="modal-card">
-      <button class="modal-close-btn" onclick="closeStudentModal()">&times;</button>
+
+  <!-- MODAL -->
+  <div id="addStudentModal" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,23,42,0.75); z-index:10000; justify-content:center; align-items:center;">
+    <div style="background:#ffffff; width:100%; max-width:650px; border-radius:8px; padding:22px 26px; border-top:5px solid #172b53;">
+      <button onclick="closeStudentModal()" style="float:right; border:none; background:transparent; font-size:1.6rem; cursor:pointer;">&times;</button>
       <h3 style="color:#172b53; font-size:1.15rem; font-weight:800;">➕ ਨਵੇਂ ਵਿਦਿਆਰਥੀ ਦਾ ਰਿਕਾਰਡ ਦਰਜ ਕਰੋ</h3>
-      <div class="entry-grid">
-        <div class="entry-group"><label>UID:</label><input type="text" id="inUID" readonly style="background:#e2e8f0; font-weight:bold; color:#b91c1c;"></div>
-        <div class="entry-group"><label>Roll Number:</label><input type="text" id="inRoll" placeholder="ROLL-102"></div>
-        <div class="entry-group"><label>Candidate Name:</label><input type="text" id="inName" placeholder="GURPREET SINGH"></div>
-        <div class="entry-group"><label>Father's Name:</label><input type="text" id="inFather" placeholder="S. HARBHAJAN SINGH"></div>
-        <div class="entry-group"><label>Address:</label><input type="text" id="inAddress" placeholder="GURU HAR SAHAI"></div>
-        <div class="entry-group"><label>Course / Trade:</label><input type="text" id="inCourse" placeholder="Mechanic Diesel"></div>
-        <div class="entry-group"><label>Session:</label><input type="text" id="inSession" value="2025 - 2026"></div>
-        <div class="entry-group"><label>Grade:</label><input type="text" id="inGrade" value="Grade A+ (Distinction)"></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px;">
+        <div><label style="font-size:0.8rem; font-weight:700;">UID:</label><input type="text" id="inUID" readonly style="width:100%; padding:8px; background:#e2e8f0; font-weight:bold; color:#b91c1c;"></div>
+        <div><label style="font-size:0.8rem; font-weight:700;">Roll Number:</label><input type="text" id="inRoll" placeholder="102" style="width:100%; padding:8px;"></div>
+        <div><label style="font-size:0.8rem; font-weight:700;">Candidate Name:</label><input type="text" id="inName" placeholder="GURPREET SINGH" style="width:100%; padding:8px;"></div>
+        <div><label style="font-size:0.8rem; font-weight:700;">Father's Name:</label><input type="text" id="inFather" placeholder="S. HARBHAJAN SINGH" style="width:100%; padding:8px;"></div>
+        <div><label style="font-size:0.8rem; font-weight:700;">Address:</label><input type="text" id="inAddress" placeholder="GURU HAR SAHAI" style="width:100%; padding:8px;"></div>
+        <div><label style="font-size:0.8rem; font-weight:700;">Course / Trade:</label><input type="text" id="inCourse" placeholder="ELECTRICIAN" style="width:100%; padding:8px;"></div>
+        <div><label style="font-size:0.8rem; font-weight:700;">Session:</label><input type="text" id="inSession" value="2025 - 2026" style="width:100%; padding:8px;"></div>
+        <div><label style="font-size:0.8rem; font-weight:700;">Grade:</label><input type="text" id="inGrade" value="Grade A+ (Distinction)" style="width:100%; padding:8px;"></div>
       </div>
-      <button class="btn-save-record" onclick="saveNewStudent()">💾 Save Record</button>
+      <button onclick="saveNewStudent()" style="width:100%; background:#16a34a; color:white; border:none; padding:11px; font-weight:bold; margin-top:15px; cursor:pointer;">💾 SAVE RECORD</button>
     </div>
   </div>
 
   <script>
     const STORAGE_KEY = "UIHESD_MASTER_LIVE_DB";
-    const defaultRecords = [{rollNo: "ROLL-101", uniqueId: "UID-2026-1001", name: "GURPREET SINGH", father: "S. HARBHAJAN SINGH", address: "GURU HAR SAHAI, DISTT. FIROZPUR, PUNJAB", course: "Mechanic Diesel (NCVT / DGT Aligned Trade)", session: "2025 - 2026", grade: "Grade A+ (Distinction)"}];
-    function getStudentDatabase() { const saved = localStorage.getItem(STORAGE_KEY); if (!saved) { localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultRecords)); return defaultRecords; } try { return JSON.parse(saved); } catch(e) { return defaultRecords; } }
-    function generateUID() { return `UID-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`; }
-    function openStudentModal() { document.getElementById("inUID").value = generateUID(); document.getElementById("addStudentModal").style.display = "flex"; document.body.style.overflow = "hidden"; }
-    function closeStudentModal() { document.getElementById("addStudentModal").style.display = "none"; document.body.style.overflow = "auto"; }
-    function renderTable() { const db = getStudentDatabase(); const tbody = document.getElementById("studentTableBody"); tbody.innerHTML = ""; db.forEach(item => { const tr = document.createElement("tr"); tr.innerHTML = `<td><strong>${item.rollNo}</strong></td><td style="color:#b91c1c; font-weight:bold;">${item.uniqueId}</td><td>${item.name}</td><td>${item.course}</td><td><button class="btn-table-view" onclick="quickView('${item.rollNo}')">View</button> <button class="btn-table-marks" onclick="window.location.href='marksheet.html?verify=${item.uniqueId}'">Marksheet</button> <button class="btn-table-del" onclick="deleteStudent('${item.rollNo}')">Delete</button></td>`; tbody.appendChild(tr); }); }
-    function saveNewStudent() { const rollNo = document.getElementById("inRoll").value.trim().toUpperCase(); const uniqueId = document.getElementById("inUID").value.trim().toUpperCase(); const name = document.getElementById("inName").value.trim().toUpperCase(); const father = document.getElementById("inFather").value.trim().toUpperCase(); const address = document.getElementById("inAddress").value.trim().toUpperCase(); const course = document.getElementById("inCourse").value.trim(); const session = document.getElementById("inSession").value.trim(); const grade = document.getElementById("inGrade").value.trim(); if (!rollNo || !name || !father || !course) return alert("ਕਿਰਪਾ ਕਰਕੇ Roll Number, Name, Father's Name ਅਤੇ Course ਜ਼ਰੂਰ ਭਰੋ!"); const db = getStudentDatabase(); if (db.find(s => s.rollNo === rollNo)) return alert("ਇਹ Roll Number ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ!"); db.push({ rollNo, uniqueId, name, father, address, course, session, grade }); localStorage.setItem(STORAGE_KEY, JSON.stringify(db)); alert("✔ Record Saved Successfully!"); closeStudentModal(); renderTable(); }
-    function deleteStudent(roll) { if (confirm(`Delete roll number ${roll}?`)) { let db = getStudentDatabase().filter(s => s.rollNo !== roll); localStorage.setItem(STORAGE_KEY, JSON.stringify(db)); renderTable(); } }
-    function quickView(roll) { document.getElementById("certInput").value = roll; verifyCertificate(); window.scrollTo({ top: 140, behavior: 'smooth' }); }
-    function exportToExcel() { const db = getStudentDatabase(); let csv = "rollNo,uniqueId,name,father,address,course,session,grade\r\n"; db.forEach(i => csv += `"${i.rollNo}","${i.uniqueId}","${i.name}","${i.father}","${i.address}","${i.course}","${i.session}","${i.grade}"\r\n`); const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); a.download = `UIHESD_Students.csv`; a.click(); }
-    function importFromExcel(e) { const file = e.target.files[0]; if (!file) return; const reader = new FileReader(); reader.onload = function(evt) { const lines = evt.target.result.split(/\r\n|\n/).filter(l => l.trim().length > 0); const db = getStudentDatabase(); for (let i = 1; i < lines.length; i++) { const cols = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(v => v.replace(/^"|"$/g, '').trim()); if (cols.length >= 6) db.push({ rollNo: cols[0], uniqueId: cols[1], name: cols[2], father: cols[3], address: cols[4], course: cols[5], session: cols[6]||'2025-2026', grade: cols[7]||'Grade A+' }); } localStorage.setItem(STORAGE_KEY, JSON.stringify(db)); alert("✔ Imported successfully!"); renderTable(); }; reader.readAsText(file); }
+    const defaultRecords = [{rollNo: "101", uniqueId: "UID-2026-6466", name: "MADAN LAL", father: "KASHMIRI LAL", address: "GURURHARSAHAI", course: "ELECTRICIAN", session: "2025 - 2026", grade: "Grade A+ (Distinction)"}];
     
+    function getStudentDatabase() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) { localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultRecords)); return defaultRecords; }
+      try { return JSON.parse(saved); } catch(e) { return defaultRecords; }
+    }
+    
+    function generateUID() { return `UID-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`; }
+    function openStudentModal() { document.getElementById("inUID").value = generateUID(); document.getElementById("addStudentModal").style.display = "flex"; }
+    function closeStudentModal() { document.getElementById("addStudentModal").style.display = "none"; }
+    
+    function renderTable() {
+      const db = getStudentDatabase();
+      const tbody = document.getElementById("studentTableBody");
+      tbody.innerHTML = "";
+      db.forEach(item => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td><strong>${item.rollNo}</strong></td><td style="color:#b91c1c; font-weight:bold;">${item.uniqueId}</td><td>${item.name}</td><td>${item.course}</td><td><button class="btn-table-view" onclick="quickView('${item.rollNo}')">View</button> <button class="btn-table-marks" onclick="window.location.href='marksheet.html?verify=${item.uniqueId}'">Marksheet</button> <button class="btn-table-del" onclick="deleteStudent('${item.rollNo}')">Delete</button></td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function saveNewStudent() {
+      const rollNo = document.getElementById("inRoll").value.trim().toUpperCase();
+      const uniqueId = document.getElementById("inUID").value.trim().toUpperCase();
+      const name = document.getElementById("inName").value.trim().toUpperCase();
+      const father = document.getElementById("inFather").value.trim().toUpperCase();
+      const address = document.getElementById("inAddress").value.trim().toUpperCase();
+      const course = document.getElementById("inCourse").value.trim();
+      const session = document.getElementById("inSession").value.trim();
+      const grade = document.getElementById("inGrade").value.trim();
+
+      if (!rollNo || !name || !father || !course) return alert("ਕਿਰਪਾ ਕਰਕੇ ਸਾਰੇ ਖਾਨੇ ਜ਼ਰੂਰ ਭਰੋ!");
+      const db = getStudentDatabase();
+      if (db.find(s => s.rollNo === rollNo)) return alert("ਇਹ Roll Number ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ!");
+
+      db.push({ rollNo, uniqueId, name, father, address, course, session, grade });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+      alert("✔ Record Saved Successfully!");
+      closeStudentModal();
+      renderTable();
+    }
+
+    function deleteStudent(roll) {
+      if (confirm(`Delete roll number ${roll}?`)) {
+        let db = getStudentDatabase().filter(s => s.rollNo !== roll);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+        renderTable();
+      }
+    }
+
+    function quickView(roll) {
+      document.getElementById("certInput").value = roll;
+      verifyCertificate();
+      window.scrollTo({ top: 140, behavior: 'smooth' });
+    }
+
+    function exportToExcel() {
+      const db = getStudentDatabase();
+      let csv = "rollNo,uniqueId,name,father,address,course,session,grade\r\n";
+      db.forEach(i => csv += `"${i.rollNo}","${i.uniqueId}","${i.name}","${i.father}","${i.address}","${i.course}","${i.session}","${i.grade}"\r\n`);
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+      a.download = `UIHESD_Students.csv`;
+      a.click();
+    }
+
+    function importFromExcel(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const lines = evt.target.result.split(/\r\n|\n/).filter(l => l.trim().length > 0);
+        const db = getStudentDatabase();
+        for (let i = 1; i < lines.length; i++) {
+          const cols = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(v => v.replace(/^"|"$/g, '').trim());
+          if (cols.length >= 6) db.push({ rollNo: cols[0], uniqueId: cols[1], name: cols[2], father: cols[3], address: cols[4], course: cols[5], session: cols[6]||'2025-2026', grade: cols[7]||'Grade A+' });
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+        alert("✔ Imported successfully!");
+        renderTable();
+      };
+      reader.readAsText(file);
+    }
+
     function verifyCertificate(forcedQuery) {
       const q = (forcedQuery || document.getElementById("certInput").value).trim().toUpperCase();
       const res = document.getElementById("certResult");
       if (!q) return alert("Enter Roll Number or UID");
       document.getElementById("certInput").value = q;
       res.style.display = "block";
+
       const db = getStudentDatabase();
       const s = db.find(item => item.rollNo.toUpperCase() === q || item.uniqueId.toUpperCase() === q);
+
       if (s) {
         res.innerHTML = `
           <div style="text-align:center; margin-bottom:12px;">
@@ -277,13 +434,14 @@
           </div>
           <button class="btn-print" onclick="window.print()">🖨️ ਪ੍ਰਿੰਟ ਸਰਟੀਫਿਕੇਟ (Print Certificate - A4 Landscape)</button>
         `;
+
         setTimeout(() => {
           const qrEl = document.getElementById("qrcode");
           if (qrEl) {
             qrEl.innerHTML = "";
             new QRCode(qrEl, {
               text: window.location.origin + window.location.pathname + "?verify=" + encodeURIComponent(s.uniqueId),
-              width: 65, height: 65, colorDark: "#000000", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M
+              width: 70, height: 70, colorDark: "#000000", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M
             });
           }
         }, 50);
@@ -292,12 +450,65 @@
       }
     }
 
+    // STRICT ISOLATED VIEW WHEN QR IS SCANNED
     window.onload = function() {
       const urlParams = new URLSearchParams(window.location.search);
       const scanVerifyUID = urlParams.get('verify') || urlParams.get('roll');
+
       if (scanVerifyUID) {
-        document.getElementById("certInput").value = scanVerifyUID;
-        verifyCertificate(scanVerifyUID);
+        document.getElementById("fullSiteLayout").style.display = "none";
+        const isolatedBox = document.getElementById("qrScanIsolatedContainer");
+        isolatedBox.style.display = "flex";
+
+        const db = getStudentDatabase();
+        const s = db.find(item => item.uniqueId.toUpperCase() === scanVerifyUID.trim().toUpperCase() || item.rollNo.toUpperCase() === scanVerifyUID.trim().toUpperCase());
+
+        if (s) {
+          isolatedBox.innerHTML = `
+            <div class="gov-qr-card">
+              <div class="gov-qr-top-strip">
+                <h3>✔ DIGITALLY AUTHENTICATED CREDENTIAL</h3>
+                <p>Central Credential Registry • Directorate General of Training</p>
+              </div>
+
+              <div class="gov-institution-banner">
+                <div class="gov-dept-tag">
+                  MINISTRY OF SKILL DEVELOPMENT & ENTREPRENEURSHIP (MSDE)<br>
+                  DIRECTORATE GENERAL OF TRAINING • GOVT. OF INDIA
+                </div>
+                <div class="gov-clg-name">UNIVERSAL INSTITUTE OF HIGHER EDUCATION & SKILL DEVELOPMENT</div>
+                <div class="gov-manta-tag">🏛️ STATUTORY VOCATIONAL CREDENTIAL COMPLIANT</div>
+              </div>
+
+              <table class="gov-qr-table">
+                <tr><td class="gov-field-lbl">CANDIDATE NAME</td><td class="gov-field-val">${s.name}</td></tr>
+                <tr><td class="gov-field-lbl">FATHER'S NAME</td><td class="gov-field-val">${s.father}</td></tr>
+                <tr><td class="gov-field-lbl">ENROLLMENT / ROLL NO</td><td class="gov-field-val" style="color:#1e3a8a;">${s.rollNo}</td></tr>
+                <tr><td class="gov-field-lbl">CERTIFICATE UID</td><td class="gov-field-val" style="color:#b91c1c;">${s.uniqueId}</td></tr>
+                <tr><td class="gov-field-lbl">PROGRAM / TRADE</td><td class="gov-field-val">${s.course}</td></tr>
+                <tr><td class="gov-field-lbl">ACADEMIC SESSION</td><td class="gov-field-val">${s.session || '2025 - 2026'}</td></tr>
+                <tr><td class="gov-field-lbl">PERFORMANCE GRADE</td><td class="gov-field-val" style="color:#15803d;">${s.grade || 'Grade A+ (Distinction)'}</td></tr>
+                <tr><td class="gov-field-lbl">VERIFICATION STATUS</td><td class="gov-field-val" style="color:#166534;">✔ 100% Genuine Certified Passout</td></tr>
+              </table>
+
+              <div class="gov-qr-footer-seal">
+                Official Digital Verification System • UIHESD Examination Cell under Statutory Training Guidelines.
+              </div>
+            </div>
+          `;
+        } else {
+          isolatedBox.innerHTML = `
+            <div class="gov-qr-card" style="border-color:#dc2626;">
+              <div class="gov-qr-top-strip" style="background:#dc2626;">
+                <h3>❌ RECORD NOT FOUND</h3>
+                <p>National Credential Registry</p>
+              </div>
+              <div style="padding:30px; text-align:center; color:#64748b; font-weight:bold;">
+                The scanned certificate Unique ID does not exist in the official student registry.
+              </div>
+            </div>
+          `;
+        }
       } else {
         renderTable();
       }

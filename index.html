@@ -4,81 +4,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Official Portal | Universal Institute of Higher Education & Skill Development</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', Arial, sans-serif; }
-    body { background-color: #f1f5f9; color: #1e293b; }
+    body { background-color: #f8fafc; color: #1e293b; }
 
     /* TOP UTILITY BAR */
     .top-utility-bar {
-      background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 6px 5%;
-      font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center; color: #334155;
+      background: #0f172a; border-bottom: 1px solid #1e293b; padding: 6px 5%;
+      font-size: 0.72rem; display: flex; justify-content: space-between; align-items: center; color: #cbd5e1;
     }
     .top-right-links { display: flex; gap: 15px; font-weight: 600; }
-    .top-right-links a { color: #1e3a8a; text-decoration: none; }
+    .top-right-links a { color: #facc15; text-decoration: none; }
     .top-right-links a:hover { text-decoration: underline; }
+
+    /* SEAMLESS HEADER & NAV WRAPPER */
+    .header-nav-wrapper {
+      background: #ffffff; border-bottom: 4px solid #1e3a8a;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
 
     /* MAIN HEADER */
     .dgt-main-header {
-      padding: 15px 5%; background: #ffffff; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #1e3a8a;
+      padding: 18px 5%; display: flex; justify-content: space-between; align-items: center;
     }
-    .header-left-emblem { display: flex; align-items: center; gap: 18px; }
-    .ashok-emblem-svg { height: 72px; width: auto; object-fit: contain; }
+    .header-left-emblem { display: flex; align-items: center; gap: 20px; }
+    .ashok-emblem-svg { height: 85px; width: auto; object-fit: contain; }
     .college-highlight-cluster { border-left: 4px solid #b45309; padding-left: 15px; }
     .dgt-sub-tag { font-size: 0.72rem; font-weight: 800; color: #64748b; letter-spacing: 1px; text-transform: uppercase; }
-    .college-bold-title { font-size: 1.5rem; color: #0b1f3a; font-weight: 900; text-transform: uppercase; }
+    .college-bold-title { font-size: 1.55rem; color: #0b1f3a; font-weight: 900; text-transform: uppercase; }
     .college-bold-title span { color: #b45309; }
     .college-punjabi-sub { font-size: 0.9rem; color: #1e3a8a; font-weight: 800; margin-top: 2px; }
     .college-accreditation-line { font-size: 0.72rem; color: #166534; font-weight: 800; text-transform: uppercase; margin-top: 2px; }
 
-    /* NAVIGATION BAR */
+    /* INTEGRATED NAVIGATION BAR */
     .navbar {
-      background: #0b1f3a; display: flex; flex-wrap: wrap; justify-content: center; padding: 0 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #1e3a8a; display: flex; flex-wrap: wrap; justify-content: center; padding: 0 5px;
     }
     .navbar a {
-      color: #ffffff; text-decoration: none; padding: 12px 16px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; transition: background 0.2s;
+      color: #ffffff; text-decoration: none; padding: 12px 18px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; transition: background 0.2s;
     }
     .navbar a:hover, .navbar a.active { background: #b45309; }
 
     /* HERO BANNER SECTION */
     .hero-section {
-      background: linear-gradient(135deg, #1e3a8a 0%, #0b1f3a 100%);
-      color: #ffffff; padding: 50px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;
+      background: linear-gradient(135deg, #0b1f3a 0%, #1e3a8a 100%);
+      color: #ffffff; padding: 60px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 35px;
+      box-shadow: inset 0 10px 20px rgba(0,0,0,0.15);
     }
-    .hero-content { flex: 1; min-width: 300px; }
-    .hero-content h1 { font-size: 2.4rem; font-weight: 900; line-height: 1.2; margin-bottom: 15px; }
-    .hero-content p { font-size: 1rem; color: #cbd5e1; margin-bottom: 25px; line-height: 1.5; }
+    .hero-content { flex: 1; min-width: 320px; }
+    .hero-content h1 { font-size: 2.6rem; font-weight: 900; line-height: 1.15; margin-bottom: 15px; letter-spacing: -0.5px; }
+    .hero-content p { font-size: 1.02rem; color: #cbd5e1; margin-bottom: 25px; line-height: 1.6; }
     .btn-register {
-      background: #b45309; color: white; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 800; display: inline-block; text-transform: uppercase; box-shadow: 0 4px 12px rgba(180,83,9,0.4);
+      background: #b45309; color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 800; display: inline-block; text-transform: uppercase; box-shadow: 0 4px 15px rgba(180,83,9,0.4);
+      transition: background 0.2s;
     }
     .btn-register:hover { background: #92400e; }
 
     /* PROFESSIONAL CLEAN BANNER IMAGE CONTAINER */
-    .hero-image-wrap { flex: 1; min-width: 300px; text-align: center; }
+    .hero-image-wrap { flex: 1; min-width: 320px; text-align: center; }
     .hero-image-wrap img {
-      width: 100%; max-width: 540px; height: 320px; object-fit: cover; border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 3px solid rgba(255,255,255,0.2);
+      width: 100%; max-width: 560px; height: 330px; object-fit: cover; border-radius: 10px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.35); border: 4px solid rgba(255,255,255,0.15);
     }
 
     /* QUICK HUBS SECTION */
     .hubs-section {
-      max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;
+      max-width: 1200px; margin: 45px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;
     }
     .hub-card {
-      background: #ffffff; border-radius: 8px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      border-top: 4px solid #1e3a8a; text-align: center; transition: transform 0.2s;
+      background: #ffffff; border-radius: 8px; padding: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-top: 4px solid #1e3a8a; text-align: center; transition: transform 0.2s, box-shadow 0.2s;
     }
-    .hub-card:hover { transform: translateY(-5px); }
-    .hub-card h3 { color: #0b1f3a; font-size: 1.15rem; font-weight: 800; margin-bottom: 10px; }
-    .hub-card p { color: #64748b; font-size: 0.85rem; line-height: 1.4; margin-bottom: 18px; }
+    .hub-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+    .hub-card h3 { color: #0b1f3a; font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; }
+    .hub-card p { color: #64748b; font-size: 0.88rem; line-height: 1.5; margin-bottom: 20px; }
     .hub-btn {
-      background: #1e3a8a; color: white; padding: 8px 20px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-block;
+      background: #1e3a8a; color: white; padding: 9px 22px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-block;
+      transition: background 0.2s;
     }
     .hub-btn:hover { background: #0b1f3a; }
 
     /* FOOTER */
     footer {
-      background: #0b132b; color: #94a3b8; padding: 30px 5%; text-align: center; font-size: 0.82rem; border-top: 3px solid #b45309; margin-top: 50px;
+      background: #0b132b; color: #94a3b8; padding: 35px 5%; text-align: center; font-size: 0.84rem; border-top: 3px solid #b45309; margin-top: 60px;
     }
     footer a { color: #facc15; text-decoration: none; margin: 0 8px; }
   </style>
@@ -94,37 +103,40 @@
     </div>
   </div>
 
-  <!-- MAIN HEADER -->
-  <header class="dgt-main-header">
-    <div class="header-left-emblem">
-      <svg class="ashok-emblem-svg" viewBox="0 0 100 150">
-        <path fill="#1e3a8a" d="M40,5 C40,2 60,2 60,5 C62,15 75,25 75,40 C75,55 60,65 60,75 L65,85 L35,85 L40,75 C40,65 25,55 25,40 C25,25 38,15 40,5 Z"/>
-        <circle cx="50" cy="105" r="14" fill="none" stroke="#1e3a8a" stroke-width="3"/>
-        <circle cx="50" cy="105" r="3" fill="#1e3a8a"/>
-        <path fill="#b45309" d="M20,125 L80,125 L75,140 L25,140 Z"/>
-        <text x="50" y="136" font-size="8" font-weight="bold" text-anchor="middle" fill="#ffffff">सਤ੍ਯਮੇਵ ਜਯਤੇ</text>
-      </svg>
-      <div class="college-highlight-cluster">
-        <div class="dgt-sub-tag">प्रशिक्षण महानिदेशालय • DIRECTORATE GENERAL OF TRAINING</div>
-        <div class="college-bold-title">UNIVERSAL INSTITUTE OF <span>HIGHER EDUCATION & SKILL DEVELOPMENT</span></div>
-        <div class="college-punjabi-sub">ਯੂਨੀਵਰਸਲ ਇੰਸਟੀਚਿਊਟ ਆਫ਼ ਹਾਇਰ ਐਜੂਕੇਸ਼ਨ ਐਂਡ ਸਕਿੱਲ ਡਿਵੈਲਪਮੈਂਟ</div>
-        <div class="college-accreditation-line">Accredited under ISO 9001:2015, IAF, MSME & NITI Aayog Recognized</div>
+  <!-- SEAMLESS HEADER & NAV WRAPPER -->
+  <div class="header-nav-wrapper">
+    <!-- MAIN HEADER -->
+    <header class="dgt-main-header">
+      <div class="header-left-emblem">
+        <svg class="ashok-emblem-svg" viewBox="0 0 100 150">
+          <path fill="#1e3a8a" d="M40,5 C40,2 60,2 60,5 C62,15 75,25 75,40 C75,55 60,65 60,75 L65,85 L35,85 L40,75 C40,65 25,55 25,40 C25,25 38,15 40,5 Z"/>
+          <circle cx="50" cy="105" r="14" fill="none" stroke="#1e3a8a" stroke-width="3"/>
+          <circle cx="50" cy="105" r="3" fill="#1e3a8a"/>
+          <path fill="#b45309" d="M20,125 L80,125 L75,140 L25,140 Z"/>
+          <text x="50" y="136" font-size="8" font-weight="bold" text-anchor="middle" fill="#ffffff">सਤ੍ਯਮੇਵ ਜਯਤੇ</text>
+        </svg>
+        <div class="college-highlight-cluster">
+          <div class="dgt-sub-tag">प्रशिक्षण महानिदेशालय • DIRECTORATE GENERAL OF TRAINING</div>
+          <div class="college-bold-title">UNIVERSAL INSTITUTE OF <span>HIGHER EDUCATION & SKILL DEVELOPMENT</span></div>
+          <div class="college-punjabi-sub">ਯੂਨੀਵਰਸਲ ਇੰਸਟੀਚਿਊਟ ਆਫ਼ ਹਾਇਰ ਐਜੂਕੇਸ਼ਨ ਐਂਡ ਸਕਿੱਲ ਡਿਵੈਲਪਮੈਂਟ</div>
+          <div class="college-accreditation-line">Accredited under ISO 9001:2015, IAF, MSME & NITI Aayog Recognized</div>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- NAVIGATION BAR -->
-  <nav class="navbar">
-    <a href="index.html" class="active">Home</a>
-    <a href="#">About Us</a>
-    <a href="#">Schemes/Programmes</a>
-    <a href="#">Courses & Trades</a>
-    <a href="#">Examination</a>
-    <a href="verify.html">Verify Certificate</a>
-    <a href="marksheet.html">Marksheet</a>
-  </nav>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+      <a href="index.html" class="active">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Schemes/Programmes</a>
+      <a href="#">Courses & Trades</a>
+      <a href="#">Examination</a>
+      <a href="verify.html">Verify Certificate</a>
+      <a href="marksheet.html">Marksheet</a>
+    </nav>
+  </div>
 
-  <!-- HERO BANNER SECTION WITH NEW PROFESSIONAL TECHNICAL/SKILL IMAGE -->
+  <!-- HERO BANNER SECTION -->
   <section class="hero-section">
     <div class="hero-content">
       <h1>Build Innovation That Reaches Every Voice</h1>
@@ -132,7 +144,6 @@
       <a href="verify.html" class="btn-register">Online Portal Verification</a>
     </div>
     <div class="hero-image-wrap">
-      <!-- Clean, high-quality modern technical education & lab training image -->
       <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop" alt="Technical Education & Skill Training Lab">
     </div>
   </section>

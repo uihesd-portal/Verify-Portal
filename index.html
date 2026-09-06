@@ -6,13 +6,13 @@
   <title>Official Portal | Universal Institute of Higher Education & Skill Development</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', Arial, sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', Arial, sans-serif; scroll-behavior: smooth; }
     body { background-color: #f8fafc; color: #1e293b; }
 
     /* TOP UTILITY BAR */
     .top-utility-bar {
-      background: #0f172a; border-bottom: 1px solid #1e293b; padding: 6px 5%;
-      font-size: 0.72rem; display: flex; justify-content: space-between; align-items: center; color: #cbd5e1;
+      background: #0f172a; border-bottom: 1px solid #1e3a8a; padding: 8px 5%;
+      font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center; color: #cbd5e1;
     }
     .top-right-links { display: flex; gap: 15px; font-weight: 600; }
     .top-right-links a { color: #facc15; text-decoration: none; }
@@ -21,12 +21,12 @@
     /* SEAMLESS HEADER & NAV WRAPPER */
     .header-nav-wrapper {
       background: #ffffff; border-bottom: 4px solid #1e3a8a;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000;
     }
 
     /* MAIN HEADER */
     .dgt-main-header {
-      padding: 18px 5%; display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 5%; display: flex; justify-content: space-between; align-items: center;
     }
     .header-left-emblem { display: flex; align-items: center; gap: 20px; }
     .ashok-emblem-svg { height: 85px; width: auto; object-fit: contain; }
@@ -37,7 +37,7 @@
     .college-punjabi-sub { font-size: 0.9rem; color: #1e3a8a; font-weight: 800; margin-top: 2px; }
     .college-accreditation-line { font-size: 0.72rem; color: #166534; font-weight: 800; text-transform: uppercase; margin-top: 2px; }
 
-    /* INTEGRATED NAVIGATION BAR */
+    /* NAVIGATION BAR */
     .navbar {
       background: #1e3a8a; display: flex; flex-wrap: wrap; justify-content: center; padding: 0 5px;
     }
@@ -49,47 +49,66 @@
     /* HERO BANNER SECTION */
     .hero-section {
       background: linear-gradient(135deg, #0b1f3a 0%, #1e3a8a 100%);
-      color: #ffffff; padding: 60px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 35px;
-      box-shadow: inset 0 10px 20px rgba(0,0,0,0.15);
+      color: #ffffff; padding: 65px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 35px;
+      box-shadow: inset 0 10px 25px rgba(0,0,0,0.2);
     }
     .hero-content { flex: 1; min-width: 320px; }
     .hero-content h1 { font-size: 2.6rem; font-weight: 900; line-height: 1.15; margin-bottom: 15px; letter-spacing: -0.5px; }
-    .hero-content p { font-size: 1.02rem; color: #cbd5e1; margin-bottom: 25px; line-height: 1.6; }
+    .hero-content p { font-size: 1.05rem; color: #cbd5e1; margin-bottom: 25px; line-height: 1.6; }
     .btn-register {
-      background: #b45309; color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 800; display: inline-block; text-transform: uppercase; box-shadow: 0 4px 15px rgba(180,83,9,0.4);
+      background: #b45309; color: white; padding: 13px 32px; border-radius: 6px; text-decoration: none; font-weight: 800; display: inline-block; text-transform: uppercase; box-shadow: 0 4px 15px rgba(180,83,9,0.4);
       transition: background 0.2s;
     }
     .btn-register:hover { background: #92400e; }
 
-    /* PROFESSIONAL CLEAN BANNER IMAGE CONTAINER */
     .hero-image-wrap { flex: 1; min-width: 320px; text-align: center; }
     .hero-image-wrap img {
-      width: 100%; max-width: 560px; height: 330px; object-fit: cover; border-radius: 10px;
+      width: 100%; max-width: 560px; height: 340px; object-fit: cover; border-radius: 10px;
       box-shadow: 0 15px 35px rgba(0,0,0,0.35); border: 4px solid rgba(255,255,255,0.15);
     }
 
-    /* QUICK HUBS SECTION */
-    .hubs-section {
-      max-width: 1200px; margin: 45px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;
-    }
+    /* SECTIONS */
+    .section-container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+    .section-title { text-align: center; margin-bottom: 35px; }
+    .section-title h2 { font-size: 2rem; color: #0b1f3a; font-weight: 900; text-transform: uppercase; margin-bottom: 8px; }
+    .section-title p { color: #64748b; font-size: 0.95rem; font-weight: 600; }
+
+    /* QUICK HUBS */
+    .hubs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
     .hub-card {
-      background: #ffffff; border-radius: 8px; padding: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      background: #ffffff; border-radius: 8px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
       border-top: 4px solid #1e3a8a; text-align: center; transition: transform 0.2s, box-shadow 0.2s;
     }
-    .hub-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-    .hub-card h3 { color: #0b1f3a; font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; }
-    .hub-card p { color: #64748b; font-size: 0.88rem; line-height: 1.5; margin-bottom: 20px; }
+    .hub-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    .hub-card h3 { color: #0b1f3a; font-size: 1.25rem; font-weight: 800; margin-bottom: 12px; }
+    .hub-card p { color: #64748b; font-size: 0.88rem; line-height: 1.5; margin-bottom: 22px; }
     .hub-btn {
-      background: #1e3a8a; color: white; padding: 9px 22px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-block;
+      background: #1e3a8a; color: white; padding: 10px 24px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-block;
       transition: background 0.2s;
     }
-    .hub-btn:hover { background: #0b1f3a; }
+    .hub-btn:hover { background: #b45309; }
+
+    /* ABOUT US SECTION */
+    .about-box {
+      background: #ffffff; border-radius: 10px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-left: 5px solid #b45309;
+    }
+    .about-box p { font-size: 0.98rem; color: #334155; line-height: 1.8; margin-bottom: 15px; }
+
+    /* COURSES GRID */
+    .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .course-item {
+      background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 22px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+      transition: all 0.2s;
+    }
+    .course-item:hover { border-color: #1e3a8a; box-shadow: 0 6px 15px rgba(30,58,138,0.1); }
+    .course-item h4 { font-size: 1.1rem; color: #0b1f3a; font-weight: 800; margin-bottom: 8px; }
+    .course-item span { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
 
     /* FOOTER */
     footer {
-      background: #0b132b; color: #94a3b8; padding: 35px 5%; text-align: center; font-size: 0.84rem; border-top: 3px solid #b45309; margin-top: 60px;
+      background: #0b132b; color: #94a3b8; padding: 40px 5%; text-align: center; font-size: 0.85rem; border-top: 3px solid #b45309; margin-top: 60px;
     }
-    footer a { color: #facc15; text-decoration: none; margin: 0 8px; }
+    footer a { color: #facc15; text-decoration: none; margin: 0 10px; }
   </style>
 </head>
 <body>
@@ -105,7 +124,6 @@
 
   <!-- SEAMLESS HEADER & NAV WRAPPER -->
   <div class="header-nav-wrapper">
-    <!-- MAIN HEADER -->
     <header class="dgt-main-header">
       <div class="header-left-emblem">
         <svg class="ashok-emblem-svg" viewBox="0 0 100 150">
@@ -124,13 +142,13 @@
       </div>
     </header>
 
-    <!-- NAVIGATION BAR -->
+    <!-- WORKING NAVIGATION BAR -->
     <nav class="navbar">
       <a href="index.html" class="active">Home</a>
-      <a href="#">About Us</a>
-      <a href="#">Schemes/Programmes</a>
-      <a href="#">Courses & Trades</a>
-      <a href="#">Examination</a>
+      <a href="#about">About Us</a>
+      <a href="#schemes">Schemes</a>
+      <a href="#courses">Courses & Trades</a>
+      <a href="#examination">Examination</a>
       <a href="verify.html">Verify Certificate</a>
       <a href="marksheet.html">Marksheet</a>
     </nav>
@@ -144,34 +162,80 @@
       <a href="verify.html" class="btn-register">Online Portal Verification</a>
     </div>
     <div class="hero-image-wrap">
-      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop" alt="Technical Education & Skill Training Lab">
+      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop" alt="Technical Education Lab">
     </div>
   </section>
 
   <!-- QUICK HUBS SECTION -->
-  <div class="hubs-section">
-    <div class="hub-card">
-      <h3>Candidate & Trainee Hub</h3>
-      <p>Access ITI Admissions, CTS/CITS enrolment, workshop practices, and trade information easily.</p>
-      <a href="verify.html" class="hub-btn">Student Portal</a>
+  <div class="section-container">
+    <div class="section-title">
+      <h2>Student & Trainee Portal Services</h2>
+      <p>Access official examination records, verify credentials, and explore skill schemes</p>
     </div>
-    <div class="hub-card">
-      <h3>Designated Vocational Schemes</h3>
-      <p>Craftsmen Training Scheme (CTS), Apprenticeship & MSME aligned skill frameworks.</p>
-      <a href="#" class="hub-btn">View Schemes</a>
+    <div class="hubs-grid">
+      <div class="hub-card">
+        <h3>Candidate & Trainee Hub</h3>
+        <p>Access ITI Admissions, CTS/CITS enrolment, workshop practices, and trade information easily.</p>
+        <a href="verify.html" class="hub-btn">Student Portal</a>
+      </div>
+      <div class="hub-card" id="schemes">
+        <h3>Designated Vocational Schemes</h3>
+        <p>Craftsmen Training Scheme (CTS), Apprenticeship & MSME aligned skill frameworks.</p>
+        <a href="verify.html" class="hub-btn">View Schemes</a>
+      </div>
+      <div class="hub-card" id="examination">
+        <h3>Examination & Verification</h3>
+        <p>AITT Results, Authenticated Certificates, online QR evaluation, and instant marksheet generation.</p>
+        <a href="verify.html" class="hub-btn">Verify Now</a>
+      </div>
     </div>
-    <div class="hub-card">
-      <h3>Examination & Verification</h3>
-      <p>AITT Results, Authenticated Certificates, online QR evaluation, and instant marksheet generation.</p>
-      <a href="verify.html" class="hub-btn">Verify Now</a>
+  </div>
+
+  <!-- ABOUT US SECTION -->
+  <div class="section-container" id="about">
+    <div class="section-title">
+      <h2>About Our Institute</h2>
+      <p>Committed to excellence in technical and vocational education</p>
+    </div>
+    <div class="about-box">
+      <p><strong>Universal Institute of Higher Education & Skill Development (UIHESD)</strong> is a premier institution dedicated to imparting professional vocational training, technical education, and advanced skill development programs. Operating under statutory frameworks and aligned with national education standards, our institute bridges the gap between academic learning and industry requirements.</p>
+      <p>We are duly recognized and accredited under <strong>ISO 9001:2015, IAF, MSME, and NITI Aayog</strong>. Our mission is to empower students with practical expertise, making them self-reliant, employable, and ready to meet global technological demands.</p>
+    </div>
+  </div>
+
+  <!-- COURSES & TRADES SECTION -->
+  <div class="section-container" id="courses">
+    <div class="section-title">
+      <h2>Popular Courses & Trades</h2>
+      <p>Industry-aligned professional technical training programs</p>
+    </div>
+    <div class="courses-grid">
+      <div class="course-item">
+        <h4>Electrician</h4>
+        <span>2 Years • CTS Trade</span>
+      </div>
+      <div class="course-item">
+        <h4>Mechanic Diesel</h4>
+        <span>1 Year • Vocational</span>
+      </div>
+      <div class="course-item">
+        <h4>Fitter</h4>
+        <span>2 Years • Technical</span>
+      </div>
+      <div class="course-item">
+        <h4>Computer Operator & Programming (COPA)</h4>
+        <span>1 Year • IT Skill</span>
+      </div>
     </div>
   </div>
 
   <!-- FOOTER -->
   <footer>
     <p>© 2026 Directorate General of Training (DGT), Ministry of Skill Development and Entrepreneurship & UIHESD Skill Hub.</p>
-    <p style="margin-top: 8px;">
+    <p style="margin-top: 10px;">
       <a href="index.html">Home</a> | 
+      <a href="#about">About Us</a> | 
+      <a href="#courses">Courses</a> | 
       <a href="verify.html">Certificate Verification</a> | 
       <a href="marksheet.html">Marksheet Portal</a>
     </p>

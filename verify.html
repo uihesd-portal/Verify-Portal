@@ -453,12 +453,6 @@
         }
       } else {
         renderTable();
-        const params = new URLSearchParams(window.location.search);
-        const v = params.get('verify') || params.get('roll');
-        if (v) {
-          document.getElementById("certInput").value = v;
-          verifyCertificate(v);
-        }
       }
     };
   </script>

@@ -33,28 +33,16 @@
     .cert-result { display: none; margin-top: 25px; }
     .cert-invalid { border: 1px solid #fecaca; background: #fef2f2; color: #dc2626; padding: 15px; text-align: center; font-weight: bold; border-radius: 6px; }
 
-    /* ================= 100% FIXED A4 PORTRAIT MARKSHEET ================= */
+    /* ================= A4 PORTRAIT MARKSHEET ================= */
     .marksheet-wrapper {
-      width: 794px;
-      max-width: 100%;
-      margin: 15px auto;
-      background: #ffffff;
-      padding: 12px;
-      border: 1px solid #94a3b8;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-      box-sizing: border-box;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
+      width: 794px; max-width: 100%; margin: 15px auto; background: #ffffff;
+      padding: 12px; border: 1px solid #94a3b8; box-shadow: 0 10px 30px rgba(0,0,0,0.12); box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
     }
     .marksheet-inner {
-      border: 5px double #1e3a8a;
-      outline: 2px solid #b45309;
-      outline-offset: -3px;
-      padding: 22px 25px 18px;
-      position: relative;
-      background: #fffdfa;
-      background-image: radial-gradient(#1e3a8a 0.3px, transparent 0.3px);
-      background-size: 16px 16px;
+      border: 5px double #1e3a8a; outline: 2px solid #b45309; outline-offset: -3px;
+      padding: 22px 25px 18px; position: relative; background: #fffdfa;
+      background-image: radial-gradient(#1e3a8a 0.3px, transparent 0.3px); background-size: 16px 16px;
       box-sizing: border-box;
     }
     .marksheet-inner::before {
@@ -64,7 +52,7 @@
     }
     .marksheet-inner::after {
       content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 480px; height: 480px;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='90' fill='none' stroke='%230f172a' stroke-width='1.5'/><circle cx='100' cy='100' r='86' fill='none' stroke='%230f172a' stroke-width='0.5'/><circle cx='100' cy='100' r='60' fill='none' stroke='%230f172a' stroke-width='1'/><g transform='translate(60, 42) scale(0.8)'><path fill='%230f172a' d='M40,5 C40,2 60,2 60,5 C62,15 75,25 75,40 C75,55 60,65 60,75 L65,85 L35,85 L40,75 C40,65 25,55 25,40 C25,25 38,15 40,5 Z'/><circle cx='50' cy='105' r='14' fill='none' stroke='%230f172a' stroke-width='3'/><circle cx='50' cy='105' r='3' fill='%230f172a'/><path fill='%230f172a' d='M20,125 L80,125 L75,140 L25,140 Z'/><text x='50' y='136' font-size='8' font-weight='bold' text-anchor='middle' fill='%23ffffff'>सत्ਯਮੇਵ ਜਯਤੇ</text></g><defs><path id='circlePath' d='M 18, 100 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0'/></defs><text font-family='Arial' font-size='12.5' font-weight='bold' fill='%230f172a' letter-spacing='1.5'><textPath href='%23circlePath' startOffset='50%' text-anchor='middle'>GOVERNMENT OF INDIA • DIRECTORATE GENERAL OF TRAINING •</textPath></text></svg>");
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='90' fill='none' stroke='%230f172a' stroke-width='1.5'/><circle cx='100' cy='100' r='86' fill='none' stroke='%230f172a' stroke-width='0.5'/><circle cx='100' cy='100' r='60' fill='none' stroke='%230f172a' stroke-width='1'/><g transform='translate(60, 42) scale(0.8)'><path fill='%230f172a' d='M40,5 C40,2 60,2 60,5 C62,15 75,25 75,40 C75,55 60,65 60,75 L65,85 L35,85 L40,75 C40,65 25,55 25,40 C25,25 38,15 40,5 Z'/><circle cx='50' cy='105' r='14' fill='none' stroke='%230f172a' stroke-width='3'/><circle cx='50' cy='105' r='3' fill='%230f172a'/><path fill='%230f172a' d='M20,125 L80,125 L75,140 L25,140 Z'/><text x='50' y='136' font-size='8' font-weight='bold' text-anchor='middle' fill='%23ffffff'>ਸਤ੍ਯਮੇਵ ਜਯਤੇ</text></g><defs><path id='circlePath' d='M 18, 100 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0'/></defs><text font-family='Arial' font-size='12.5' font-weight='bold' fill='%230f172a' letter-spacing='1.5'><textPath href='%23circlePath' startOffset='50%' text-anchor='middle'>GOVERNMENT OF INDIA • DIRECTORATE GENERAL OF TRAINING •</textPath></text></svg>");
       background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.04; z-index: 1; pointer-events: none;
     }
 
@@ -169,7 +157,7 @@
           <circle cx="50" cy="105" r="14" fill="none" stroke="#1e3a8a" stroke-width="3"/>
           <circle cx="50" cy="105" r="3" fill="#1e3a8a"/>
           <path fill="#b45309" d="M20,125 L80,125 L75,140 L25,140 Z"/>
-          <text x="50" y="136" font-size="8" font-weight="bold" text-anchor="middle" fill="#ffffff">सਤ੍ਯਮੇਵ ਜਯਤੇ</text>
+          <text x="50" y="136" font-size="8" font-weight="bold" text-anchor="middle" fill="#ffffff">ਸਤ੍ਯਮੇਵ ਜਯਤੇ</text>
         </svg>
         <div class="college-highlight-cluster">
           <div class="dgt-sub-tag">प्रशिक्षण महानिदेशालय • DIRECTORATE GENERAL OF TRAINING</div>
@@ -297,6 +285,7 @@
           const qr = document.getElementById("qrcodeMs");
           if (qr) {
             qr.innerHTML = "";
+            // LINK GENERATED FOR GOVT VERIFICATION SLIP ON SCAN
             new QRCode(qr, {
               text: window.location.origin + window.location.pathname + "?verify=" + encodeURIComponent(s.uniqueId),
               width: 70, height: 70, colorDark: "#000000", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M

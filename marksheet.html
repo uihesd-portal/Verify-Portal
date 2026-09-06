@@ -33,6 +33,18 @@
     .cert-result { display: none; margin-top: 25px; }
     .cert-invalid { border: 1px solid #fecaca; background: #fef2f2; color: #dc2626; padding: 15px; text-align: center; font-weight: bold; border-radius: 6px; }
 
+    /* EDIT MARKS PANEL BUTTON */
+    .btn-edit-marks { background: #b45309; color: white; border: none; padding: 9px 18px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 0.85rem; margin-bottom: 15px; }
+
+    /* MODAL */
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(4px); z-index: 10000; justify-content: center; align-items: center; padding: 15px; }
+    .modal-card { background: #ffffff; width: 100%; max-width: 600px; border-radius: 8px; padding: 25px 30px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.35); border-top: 5px solid #7b1113; max-height: 90vh; overflow-y: auto; }
+    .modal-close-btn { position: absolute; top: 15px; right: 18px; background: transparent; border: none; font-size: 1.6rem; color: #64748b; cursor: pointer; }
+    .entry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+    .entry-group label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 3px; color: #334155; }
+    .entry-group input { width: 100%; padding: 8px 10px; border: 1.5px solid #cbd5e1; border-radius: 4px; font-size: 0.88rem; outline: none; }
+    .btn-save-marks { width: 100%; background: #16a34a; color: white; border: none; padding: 11px; font-size: 0.95rem; font-weight: 800; border-radius: 4px; cursor: pointer; margin-top: 18px; text-transform: uppercase; }
+
     /* ================= FULL PAGE EXPANDED A4 PORTRAIT MARKSHEET ================= */
     .marksheet-wrapper {
       width: 794px; max-width: 100%; margin: 15px auto; background: #ffffff; padding: 14px; border: 1px solid #94a3b8; box-shadow: 0 10px 30px rgba(0,0,0,0.12); box-sizing: border-box;
@@ -130,7 +142,7 @@
         box-shadow: none !important;
       }
       .marksheet-inner { height: 100% !important; box-sizing: border-box !important; }
-      .btn-print, header, nav, .top-utility-bar, footer, .cert-input-group, .cert-box h2, .cert-box p {
+      .btn-print, header, nav, .top-utility-bar, footer, .cert-input-group, .cert-box h2, .cert-box p, .btn-edit-marks {
         display: none !important;
       }
     }
@@ -181,16 +193,97 @@
     </footer>
   </div>
 
+  <!-- EDIT MARKS MODAL -->
+  <div id="editMarksModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeEditModal()">&times;</button>
+      <h3 style="color:#7b1113; font-size:1.15rem; font-weight:800; margin-bottom:5px;">✏️ ਵਿਸ਼ਿਆਂ ਦੇ ਨੰਬਰ ਦਰਜ/ਅੱਪਡੇਟ ਕਰੋ</h3>
+      <p id="modalStudentTitle" style="font-size:0.85rem; color:#64748b; margin-bottom:15px; font-weight:bold;"></p>
+      
+      <div class="entry-grid" style="font-weight: bold; color: #1e293b; font-size: 0.8rem; border-bottom: 2px solid #cbd5e1; padding-bottom: 5px;">
+        <div>ਵਿਸ਼ਾ (Subject)</div>
+        <div>ਪ੍ਰਾਪਤ ਨੰਬਰ (Marks Obtained)</div>
+      </div>
+
+      <div class="entry-grid" style="margin-top:10px;">
+        <div style="font-size:0.82rem; font-weight:700; align-self:center;">101 - Trade Theory (Max 100)</div>
+        <div><input type="number" id="m101" value="86"></div>
+      </div>
+      <div class="entry-grid" style="margin-top:8px;">
+        <div style="font-size:0.82rem; font-weight:700; align-self:center;">102 - Trade Practical (Max 250)</div>
+        <div><input type="number" id="m102" value="220"></div>
+      </div>
+      <div class="entry-grid" style="margin-top:8px;">
+        <div style="font-size:0.82rem; font-weight:700; align-self:center;">103 - Workshop Calc (Max 50)</div>
+        <div><input type="number" id="m103" value="42"></div>
+      </div>
+      <div class="entry-grid" style="margin-top:8px;">
+        <div style="font-size:0.82rem; font-weight:700; align-self:center;">104 - Employability (Max 50)</div>
+        <div><input type="number" id="m104" value="45"></div>
+      </div>
+      <div class="entry-grid" style="margin-top:8px;">
+        <div style="font-size:0.82rem; font-weight:700; align-self:center;">105 - Formative Assess (Max 200)</div>
+        <div><input type="number" id="m105" value="178"></div>
+      </div>
+
+      <button class="btn-save-marks" onclick="saveStudentMarks()">💾 Save & Update Marksheet</button>
+    </div>
+  </div>
+
   <div id="qrScanIsolatedContainer" style="display:none;" class="qr-standalone-wrapper"></div>
 
   <script>
     const STORAGE_KEY = "UIHESD_MASTER_LIVE_DB";
-    const defaultRecords = [{rollNo: "101", uniqueId: "UID-2026-6466", name: "MADAN LAL", father: "KASHMIRI LAL", address: "GURURHARSAHAI", course: "ELECTRICIAN", session: "2025 - 2026", grade: "Grade A+ (Distinction)"}];
+    const defaultRecords = [{
+      rollNo: "101", uniqueId: "UID-2026-6466", name: "MADAN LAL", father: "KASHMIRI LAL", address: "GURURHARSAHAI", course: "ELECTRICIAN", session: "2025 - 2026", grade: "Grade A+ (Distinction)",
+      marks: { m101: 86, m102: 220, m103: 42, m104: 45, m105: 178 }
+    }];
     
     function getDatabase() {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (!saved) { localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultRecords)); return defaultRecords; }
       try { return JSON.parse(saved); } catch(e) { return defaultRecords; }
+    }
+
+    let currentEditingRoll = "";
+
+    function openEditModal(roll) {
+      const db = getDatabase();
+      const s = db.find(item => item.rollNo.toUpperCase() === roll.toUpperCase());
+      if (!s) return alert("ਰਿਕਾਰਡ ਨਹੀਂ ਮਿਲਿਆ!");
+      currentEditingRoll = s.rollNo;
+      document.getElementById("modalStudentTitle").innerText = `${s.name} (Roll No: ${s.rollNo})`;
+      
+      const m = s.marks || { m101: 86, m102: 220, m103: 42, m104: 45, m105: 178 };
+      document.getElementById("m101").value = m.m101;
+      document.getElementById("m102").value = m.m102;
+      document.getElementById("m103").value = m.m103;
+      document.getElementById("m104").value = m.m104;
+      document.getElementById("m105").value = m.m105;
+
+      document.getElementById("editMarksModal").style.display = "flex";
+    }
+
+    function closeEditModal() {
+      document.getElementById("editMarksModal").style.display = "none";
+    }
+
+    function saveStudentMarks() {
+      let db = getDatabase();
+      const idx = db.findIndex(item => item.rollNo.toUpperCase() === currentEditingRoll.toUpperCase());
+      if (idx !== -1) {
+        db[idx].marks = {
+          m101: parseInt(document.getElementById("m101").value) || 0,
+          m102: parseInt(document.getElementById("m102").value) || 0,
+          m103: parseInt(document.getElementById("m103").value) || 0,
+          m104: parseInt(document.getElementById("m104").value) || 0,
+          m105: parseInt(document.getElementById("m105").value) || 0
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+        alert("✔ Marks Updated Successfully!");
+        closeEditModal();
+        generateMarksheet(currentEditingRoll);
+      }
     }
 
     function generateMarksheet(forcedQ) {
@@ -205,11 +298,17 @@
       const s = db.find(item => (item.rollNo && item.rollNo.toUpperCase() === q) || (item.uniqueId && item.uniqueId.toUpperCase() === q));
 
       if (s) {
+        const m = s.marks || { m101: 86, m102: 220, m103: 42, m104: 45, m105: 178 };
+        const totalObt = m.m101 + m.m102 + m.m103 + m.m104 + m.m105;
+        const maxTotal = 650;
+        const percentage = ((totalObt / maxTotal) * 100).toFixed(1);
+
         res.innerHTML = `
-          <div style="text-align:center; margin-bottom:12px;" id="successMsgWrap">
+          <div style="text-align:center; margin-bottom:12px; display:flex; justify-content:center; gap:15px; align-items:center;" id="successMsgWrap">
             <span style="background:#16a34a; color:white; padding:4px 18px; border-radius:20px; font-weight:bold; font-size:0.82rem;">
               ✔ OFFICIAL STATEMENT OF MARKS VERIFIED
             </span>
+            <button class="btn-edit-marks" style="margin:0;" onclick="openEditModal('${s.rollNo}')">✏️ Edit Marks</button>
           </div>
 
           <div class="marksheet-wrapper">
@@ -242,14 +341,14 @@
                   <tr><th>Subject Code</th><th>Subject Description / Title</th><th>Max Marks</th><th>Min Marks</th><th>Marks Obtained</th><th>Result / Grade</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td><b>101</b></td><td class="sub-name">Trade Theory</td><td>100</td><td>33</td><td><b>86</b></td><td style="color:#15803d; font-weight:bold;">Pass (A+)</td></tr>
-                  <tr><td><b>102</b></td><td class="sub-name">Trade Practical</td><td>250</td><td>150</td><td><b>220</b></td><td style="color:#15803d; font-weight:bold;">Pass (A+)</td></tr>
-                  <tr><td><b>103</b></td><td class="sub-name">Workshop Calculation & Science</td><td>50</td><td>17</td><td><b>42</b></td><td style="color:#15803d; font-weight:bold;">Pass (A)</td></tr>
-                  <tr><td><b>104</b></td><td class="sub-name">Employability Skills</td><td>50</td><td>17</td><td><b>45</b></td><td style="color:#15803d; font-weight:bold;">Pass (A+)</td></tr>
-                  <tr><td><b>105</b></td><td class="sub-name">Formative Assessment (Internal)</td><td>200</td><td>120</td><td><b>178</b></td><td style="color:#15803d; font-weight:bold;">Pass (A+)</td></tr>
+                  <tr><td><b>101</b></td><td class="sub-name">Trade Theory</td><td>100</td><td>33</td><td><b>${m.m101}</b></td><td style="color:#15803d; font-weight:bold;">Pass</td></tr>
+                  <tr><td><b>102</b></td><td class="sub-name">Trade Practical</td><td>250</td><td>150</td><td><b>${m.m102}</b></td><td style="color:#15803d; font-weight:bold;">Pass</td></tr>
+                  <tr><td><b>103</b></td><td class="sub-name">Workshop Calculation & Science</td><td>50</td><td>17</td><td><b>${m.m103}</b></td><td style="color:#15803d; font-weight:bold;">Pass</td></tr>
+                  <tr><td><b>104</b></td><td class="sub-name">Employability Skills</td><td>50</td><td>17</td><td><b>${m.m104}</b></td><td style="color:#15803d; font-weight:bold;">Pass</td></tr>
+                  <tr><td><b>105</b></td><td class="sub-name">Formative Assessment (Internal)</td><td>200</td><td>120</td><td><b>${m.m105}</b></td><td style="color:#15803d; font-weight:bold;">Pass</td></tr>
                   <tr style="background:#f8fafc; font-weight:900;">
                     <td colspan="2" style="text-align:right;">TOTAL AGGREGATE MARKS:</td>
-                    <td>650</td><td>337</td><td style="color:#b91c1c; font-size:0.95rem;">571</td><td style="color:#16a34a; font-size:0.95rem;">91.5% (Distinction)</td>
+                    <td>650</td><td>337</td><td style="color:#b91c1c; font-size:0.95rem;">${totalObt}</td><td style="color:#16a34a; font-size:0.95rem;">${percentage}% (Distinction)</td>
                   </tr>
                 </tbody>
               </table>
@@ -302,7 +401,7 @@
         const isolatedBox = document.getElementById("qrScanIsolatedContainer");
         isolatedBox.style.display = "flex";
 
-        const db = getStudentDatabase();
+        const db = getDatabase();
         const s = db.find(item => item.uniqueId.toUpperCase() === scanVerifyUID.trim().toUpperCase() || item.rollNo.toUpperCase() === scanVerifyUID.trim().toUpperCase());
 
         if (s) {

@@ -48,13 +48,13 @@
     .btn-table-marks { background: #7b1113; color: white; border: none; padding: 4px 10px; border-radius: 3px; cursor: pointer; font-weight: bold; margin-left: 4px; }
     .btn-table-del { background: #dc2626; color: white; border: none; padding: 4px 10px; border-radius: 3px; cursor: pointer; font-weight: bold; margin-left: 4px; }
 
-    /* ================= 100% FIXED A4 LANDSCAPE CERTIFICATE ================= */
+    /* ================= FULL PAGE EXPANDED A4 LANDSCAPE CERTIFICATE ================= */
     .stylish-cert-wrapper {
-      width: 1040px;
+      width: 1060px;
       max-width: 100%;
       margin: 15px auto;
       background: #fcfbf7;
-      padding: 12px;
+      padding: 16px;
       border: 1px solid #d4af37;
       box-shadow: 0 10px 30px rgba(0,0,0,0.12);
       box-sizing: border-box;
@@ -64,14 +64,14 @@
       print-color-adjust: exact !important;
     }
     .stylish-cert-wrapper::before {
-      content: ""; position: absolute; top: 0; right: 0; width: 140px; height: 140px;
+      content: ""; position: absolute; top: 0; right: 0; width: 180px; height: 180px;
       background: linear-gradient(135deg, transparent 40%, #c5a059 40%, #c5a059 50%, #7b1113 50%);
       z-index: 2; pointer-events: none;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
     }
     .stylish-cert-wrapper::after {
-      content: ""; position: absolute; bottom: 0; left: 0; width: 140px; height: 140px;
+      content: ""; position: absolute; bottom: 0; left: 0; width: 180px; height: 180px;
       background: linear-gradient(135deg, #7b1113 50%, #c5a059 50%, #c5a059 60%, transparent 60%);
       z-index: 2; pointer-events: none;
       -webkit-print-color-adjust: exact !important;
@@ -79,7 +79,7 @@
     }
     .stylish-inner-frame {
       border: 2px solid #c5a059;
-      padding: 16px 28px 12px;
+      padding: 24px 40px 20px;
       position: relative;
       background: #fffdf9;
       z-index: 3;
@@ -87,81 +87,54 @@
     }
     
     .stylish-inner-frame::before {
-      content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 480px; height: 480px;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='90' fill='none' stroke='%230f172a' stroke-width='1.5'/><circle cx='100' cy='100' r='86' fill='none' stroke='%230f172a' stroke-width='0.5'/><circle cx='100' cy='100' r='60' fill='none' stroke='%230f172a' stroke-width='1'/><g transform='translate(60, 42) scale(0.8)'><path fill='%230f172a' d='M40,5 C40,2 60,2 60,5 C62,15 75,25 75,40 C75,55 60,65 60,75 L65,85 L35,85 L40,75 C40,65 25,55 25,40 C25,25 38,15 40,5 Z'/><circle cx='50' cy='105' r='14' fill='none' stroke='%230f172a' stroke-width='3'/><circle cx='50' cy='105' r='3' fill='%230f172a'/><path fill='%230f172a' d='M20,125 L80,125 L75,140 L25,140 Z'/><text x='50' y='136' font-size='8' font-weight='bold' text-anchor='middle' fill='%23ffffff'>सत्यमेव जयते</text></g><defs><path id='circlePath' d='M 18, 100 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0'/></defs><text font-family='Arial' font-size='12.5' font-weight='bold' fill='%230f172a' letter-spacing='1.5'><textPath href='%23circlePath' startOffset='50%' text-anchor='middle'>GOVERNMENT OF INDIA • DIRECTORATE GENERAL OF TRAINING •</textPath></text></svg>");
-      background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.055; z-index: 1; pointer-events: none;
+      content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 550px; height: 550px;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='90' fill='none' stroke='%230f172a' stroke-width='1.5'/><circle cx='100' cy='100' r='86' fill='none' stroke='%230f172a' stroke-width='0.5'/><circle cx='100' cy='100' r='60' fill='none' stroke='%230f172a' stroke-width='1'/><g transform='translate(60, 42) scale(0.8)'><path fill='%230f172a' d='M40,5 C40,2 60,2 60,5 C62,15 75,25 75,40 C75,55 60,65 60,75 L65,85 L35,85 L40,75 C40,65 25,55 25,40 C25,25 38,15 40,5 Z'/><circle cx='50' cy='105' r='14' fill='none' stroke='%230f172a' stroke-width='3'/><circle cx='50' cy='105' r='3' fill='%230f172a'/><path fill='%230f172a' d='M20,125 L80,125 L75,140 L25,140 Z'/><text x='50' y='136' font-size='8' font-weight='bold' text-anchor='middle' fill='%23ffffff'>ਸਤ੍ਯਮੇਵ ਜਯਤੇ</text></g><defs><path id='circlePath' d='M 18, 100 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0'/></defs><text font-family='Arial' font-size='12.5' font-weight='bold' fill='%230f172a' letter-spacing='1.5'><textPath href='%23circlePath' startOffset='50%' text-anchor='middle'>GOVERNMENT OF INDIA • DIRECTORATE GENERAL OF TRAINING •</textPath></text></svg>");
+      background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.05; z-index: 1; pointer-events: none;
     }
 
     .sc-header, .sc-main-title-box, .name-container, .sc-statement, .footer-logos-strip, .sc-footer-grid { position: relative; z-index: 2; }
-    .ornament-tl { position: absolute; top: 6px; left: 6px; width: 32px; height: 32px; border-top: 2.5px solid #c5a059; border-left: 2.5px solid #c5a059; z-index: 2; }
-    .ornament-br { position: absolute; bottom: 6px; right: 6px; width: 32px; height: 32px; border-bottom: 2.5px solid #c5a059; border-right: 2.5px solid #c5a059; z-index: 2; }
+    .ornament-tl { position: absolute; top: 8px; left: 8px; width: 40px; height: 40px; border-top: 3px solid #c5a059; border-left: 3px solid #c5a059; z-index: 2; }
+    .ornament-br { position: absolute; bottom: 8px; right: 8px; width: 40px; height: 40px; border-bottom: 3px solid #c5a059; border-right: 3px solid #c5a059; z-index: 2; }
 
-    .sc-header { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid #c5a059; padding-bottom: 6px; margin-bottom: 6px; }
-    .sc-logo { height: 60px; width: 60px; object-fit: contain; }
+    .sc-header { display: flex; align-items: center; gap: 15px; border-bottom: 2px solid #c5a059; padding-bottom: 10px; margin-bottom: 10px; }
+    .sc-logo { height: 70px; width: 70px; object-fit: contain; }
     .sc-titles { flex: 1; text-align: center; }
-    .sc-titles h4 { font-size: 0.65rem; color: #b45309; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
-    .sc-titles h2 { font-size: 1.12rem; color: #0b1f3a; font-family: 'Cinzel', serif; font-weight: 900; }
-    .sc-titles p { font-size: 0.58rem; color: #166534; font-weight: 800; text-transform: uppercase; margin-top: 1px; }
+    .sc-titles h4 { font-size: 0.72rem; color: #b45309; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .sc-titles h2 { font-size: 1.25rem; color: #0b1f3a; font-family: 'Cinzel', serif; font-weight: 900; }
+    .sc-titles p { font-size: 0.65rem; color: #166534; font-weight: 800; text-transform: uppercase; margin-top: 2px; }
 
-    .sc-main-title-box { text-align: center; margin: 4px 0 2px; }
-    .sc-cert-word { font-family: 'Cinzel', serif; font-size: 2.1rem; font-weight: 900; color: #7b1113; letter-spacing: 4px; line-height: 1; }
-    .sc-achieve-word { font-family: 'Cinzel', serif; font-size: 0.88rem; font-weight: 700; color: #334155; letter-spacing: 2px; margin-top: 2px; text-transform: uppercase; }
-    .sc-presented-to { font-size: 0.65rem; color: #64748b; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 3px; }
+    .sc-main-title-box { text-align: center; margin: 12px 0 6px; }
+    .sc-cert-word { font-family: 'Cinzel', serif; font-size: 2.7rem; font-weight: 900; color: #7b1113; letter-spacing: 5px; line-height: 1; }
+    .sc-achieve-word { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 700; color: #334155; letter-spacing: 3px; margin-top: 4px; text-transform: uppercase; }
+    .sc-presented-to { font-size: 0.75rem; color: #64748b; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 6px; }
 
-    .name-container { text-align: center; margin: 3px 0; }
-    .sc-candidate-name { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 900; color: #9a3412; text-align: center; margin: 2px 0; letter-spacing: 2px; text-transform: uppercase; border-bottom: 2px solid #c5a059; display: inline-block; padding: 0 20px; }
-    .sc-statement { font-family: 'Montserrat', sans-serif; font-size: 0.80rem; color: #1e293b; text-align: center; max-width: 780px; margin: 5px auto 9px; line-height: 1.4; font-weight: 500; }
-    .sc-highlight { font-weight: 800; color: #0b1f3a; border-bottom: 1.5px solid #c5a059; padding: 0 2px; }
+    .name-container { text-align: center; margin: 6px 0; }
+    .sc-candidate-name { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 900; color: #9a3412; text-align: center; margin: 4px 0; letter-spacing: 3px; text-transform: uppercase; border-bottom: 2.5px solid #c5a059; display: inline-block; padding: 0 30px; }
+    .sc-statement { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: #1e293b; text-align: center; max-width: 860px; margin: 10px auto 16px; line-height: 1.6; font-weight: 500; }
+    .sc-highlight { font-weight: 800; color: #0b1f3a; border-bottom: 1.5px solid #c5a059; padding: 0 4px; }
 
-    .footer-logos-strip { display: flex; justify-content: space-around; align-items: center; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 8px; margin-bottom: 6px; }
-    .f-logo-item { display: flex; align-items: center; gap: 6px; }
-    .f-logo-item img { height: 35px; width: auto; max-width: 75px; object-fit: contain; }
-    .f-logo-item span { font-size: 0.52rem; font-weight: 800; color: #1e3a8a; line-height: 1.1; text-transform: uppercase; }
+    .footer-logos-strip { display: flex; justify-content: space-around; align-items: center; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px 12px; margin-bottom: 12px; }
+    .f-logo-item { display: flex; align-items: center; gap: 8px; }
+    .f-logo-item img { height: 42px; width: auto; max-width: 85px; object-fit: contain; }
+    .f-logo-item span { font-size: 0.6rem; font-weight: 800; color: #1e3a8a; line-height: 1.2; text-transform: uppercase; }
 
-    .sc-footer-grid { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1.5px dashed #cbd5e1; padding-top: 8px; margin-top: 4px; }
-    .sc-qr-wrap { text-align: center; background: white; padding: 2px; border: 1px solid #cbd5e1; border-radius: 4px; }
+    .sc-footer-grid { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1.5px dashed #cbd5e1; padding-top: 12px; margin-top: 6px; }
+    .sc-qr-wrap { text-align: center; background: white; padding: 4px; border: 1px solid #cbd5e1; border-radius: 4px; }
     #qrcode { display: inline-block; }
-    .sc-qr-lbl { font-size: 0.45rem; font-weight: 800; margin-top: 1px; text-transform: uppercase; }
-    .user-uploaded-red-seal { width: 75px; height: 75px; object-fit: contain; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.25)); }
-    .sc-sign-col { text-align: center; font-size: 0.64rem; font-weight: 800; color: #1e3a8a; width: 140px; }
-    .sc-sign-line { border-bottom: 1.5px solid #0f172a; margin-bottom: 2px; height: 20px; }
+    .sc-qr-lbl { font-size: 0.52rem; font-weight: 800; margin-top: 2px; text-transform: uppercase; }
+    .user-uploaded-red-seal { width: 90px; height: 90px; object-fit: contain; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25)); }
+    .sc-sign-col { text-align: center; font-size: 0.72rem; font-weight: 800; color: #1e3a8a; width: 160px; }
+    .sc-sign-line { border-bottom: 1.5px solid #0f172a; margin-bottom: 3px; height: 24px; }
 
-    .btn-print { background: #16a34a; color: white; border: none; padding: 11px 26px; font-weight: bold; border-radius: 5px; cursor: pointer; font-size: 0.95rem; margin: 20px auto 0; display: block; }
+    .btn-print { background: #16a34a; color: white; border: none; padding: 12px 28px; font-weight: bold; border-radius: 5px; cursor: pointer; font-size: 0.95rem; margin: 20px auto 0; display: block; }
 
-    /* ================= 100% OFFICIAL GOVT QR VERIFICATION CARD ================= */
-    .qr-standalone-wrapper {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px 10px;
-      background: #f1f5f9;
-    }
-    .gov-qr-card {
-      background: #ffffff;
-      border: 2px solid #0f766e;
-      border-radius: 12px;
-      box-shadow: 0 16px 40px rgba(15, 118, 110, 0.2);
-      width: 100%;
-      max-width: 580px;
-      overflow: hidden;
-      position: relative;
-    }
-    .gov-qr-top-strip {
-      background: #0f766e;
-      color: #ffffff;
-      padding: 16px 20px;
-      text-align: center;
-      border-bottom: 3px solid #f59e0b;
-    }
+    /* GOVT QR VERIFICATION CARD */
+    .qr-standalone-wrapper { min-height: 90vh; display: flex; align-items: center; justify-content: center; padding: 20px 10px; background: #f1f5f9; }
+    .gov-qr-card { background: #ffffff; border: 2px solid #0f766e; border-radius: 12px; box-shadow: 0 16px 40px rgba(15, 118, 110, 0.2); width: 100%; max-width: 580px; overflow: hidden; position: relative; }
+    .gov-qr-top-strip { background: #0f766e; color: #ffffff; padding: 16px 20px; text-align: center; border-bottom: 3px solid #f59e0b; }
     .gov-qr-top-strip h3 { font-size: 1.22rem; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; margin: 0; }
     .gov-qr-top-strip p { font-size: 0.74rem; font-weight: 700; color: #ccfbf1; margin-top: 3px; letter-spacing: 0.3px; }
-    .gov-institution-banner {
-      background: #f0fdf4;
-      border-bottom: 1.5px dashed #0f766e;
-      padding: 14px 18px;
-      text-align: center;
-    }
+    .gov-institution-banner { background: #f0fdf4; border-bottom: 1.5px dashed #0f766e; padding: 14px 18px; text-align: center; }
     .gov-institution-banner .gov-dept-tag { font-size: 0.72rem; font-weight: 800; color: #047857; text-transform: uppercase; line-height: 1.2; }
     .gov-institution-banner .gov-clg-name { font-size: 1.12rem; font-weight: 900; color: #0f172a; text-transform: uppercase; margin-top: 4px; }
     .gov-institution-banner .gov-manta-tag { display: inline-block; background: #1e3a8a; color: #ffffff; font-size: 0.70rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; margin-top: 8px; text-transform: uppercase; }
@@ -172,7 +145,7 @@
     .gov-qr-table td.gov-field-val { width: 60%; color: #0f172a; font-weight: 800; }
     .gov-qr-footer-seal { background: #f8fafc; padding: 14px 20px; text-align: center; border-top: 1px solid #e2e8f0; font-size: 0.75rem; font-weight: 800; color: #065f46; line-height: 1.4; }
 
-    /* PRINT RULES FOR EXACT A4 LANDSCAPE */
+    /* EXACT A4 LANDSCAPE PRINT */
     @page { size: A4 landscape; margin: 0; }
     @media print {
       html, body {
@@ -205,7 +178,6 @@
 </head>
 <body>
 
-  <!-- MAIN SITE LAYOUT -->
   <div id="fullSiteLayout">
     <div class="top-utility-bar">
       <div>Government of India | Ministry of Skill Development and Entrepreneurship</div>
@@ -266,10 +238,7 @@
     </footer>
   </div>
 
-  <!-- QR SCAN ISOLATED GOVT PORTAL CARD -->
   <div id="qrScanIsolatedContainer" style="display:none;" class="qr-standalone-wrapper"></div>
-
-  <!-- MODAL -->
   <div id="addStudentModal" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,23,42,0.75); z-index:10000; justify-content:center; align-items:center;">
     <div style="background:#ffffff; width:100%; max-width:650px; border-radius:8px; padding:22px 26px; border-top:5px solid #172b53;">
       <button onclick="closeStudentModal()" style="float:right; border:none; background:transparent; font-size:1.6rem; cursor:pointer;">&times;</button>
@@ -382,10 +351,8 @@
       if (!q) return alert("Enter Roll Number or UID");
       document.getElementById("certInput").value = q;
       res.style.display = "block";
-
       const db = getStudentDatabase();
       const s = db.find(item => item.rollNo.toUpperCase() === q || item.uniqueId.toUpperCase() === q);
-
       if (s) {
         res.innerHTML = `
           <div style="text-align:center; margin-bottom:12px;">
@@ -434,7 +401,6 @@
           </div>
           <button class="btn-print" onclick="window.print()">🖨️ ਪ੍ਰਿੰਟ ਸਰਟੀਫਿਕੇਟ (Print Certificate - A4 Landscape)</button>
         `;
-
         setTimeout(() => {
           const qrEl = document.getElementById("qrcode");
           if (qrEl) {
@@ -450,7 +416,6 @@
       }
     }
 
-    // STRICT ISOLATED VIEW WHEN QR IS SCANNED
     window.onload = function() {
       const urlParams = new URLSearchParams(window.location.search);
       const scanVerifyUID = urlParams.get('verify') || urlParams.get('roll');
@@ -511,6 +476,12 @@
         }
       } else {
         renderTable();
+        const params = new URLSearchParams(window.location.search);
+        const v = params.get('verify') || params.get('roll');
+        if (v) {
+          document.getElementById("certInput").value = v;
+          verifyCertificate(v);
+        }
       }
     };
   </script>

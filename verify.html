@@ -50,41 +50,18 @@
 
     /* ================= FULL PAGE EXPANDED A4 LANDSCAPE CERTIFICATE ================= */
     .stylish-cert-wrapper {
-      width: 1060px;
-      max-width: 100%;
-      margin: 15px auto;
-      background: #fcfbf7;
-      padding: 16px;
-      border: 1px solid #d4af37;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-      box-sizing: border-box;
-      position: relative;
-      overflow: hidden;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
+      width: 1060px; max-width: 100%; margin: 15px auto; background: #fcfbf7; padding: 16px; border: 1px solid #d4af37; box-shadow: 0 10px 30px rgba(0,0,0,0.12); box-sizing: border-box; position: relative; overflow: hidden;
+      -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
     }
     .stylish-cert-wrapper::before {
-      content: ""; position: absolute; top: 0; right: 0; width: 180px; height: 180px;
-      background: linear-gradient(135deg, transparent 40%, #c5a059 40%, #c5a059 50%, #7b1113 50%);
-      z-index: 2; pointer-events: none;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
+      content: ""; position: absolute; top: 0; right: 0; width: 180px; height: 180px; background: linear-gradient(135deg, transparent 40%, #c5a059 40%, #c5a059 50%, #7b1113 50%); z-index: 2; pointer-events: none;
+      -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
     }
     .stylish-cert-wrapper::after {
-      content: ""; position: absolute; bottom: 0; left: 0; width: 180px; height: 180px;
-      background: linear-gradient(135deg, #7b1113 50%, #c5a059 50%, #c5a059 60%, transparent 60%);
-      z-index: 2; pointer-events: none;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
+      content: ""; position: absolute; bottom: 0; left: 0; width: 180px; height: 180px; background: linear-gradient(135deg, #7b1113 50%, #c5a059 50%, #c5a059 60%, transparent 60%); z-index: 2; pointer-events: none;
+      -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
     }
-    .stylish-inner-frame {
-      border: 2px solid #c5a059;
-      padding: 30px 45px 25px;
-      position: relative;
-      background: #fffdf9;
-      z-index: 3;
-      box-sizing: border-box;
-    }
+    .stylish-inner-frame { border: 2px solid #c5a059; padding: 30px 45px 25px; position: relative; background: #fffdf9; z-index: 3; box-sizing: border-box; }
     
     .stylish-inner-frame::before {
       content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 550px; height: 550px;
@@ -128,7 +105,7 @@
 
     .btn-print { background: #16a34a; color: white; border: none; padding: 12px 28px; font-weight: bold; border-radius: 5px; cursor: pointer; font-size: 0.95rem; margin: 20px auto 0; display: block; }
 
-    /* GOVT QR VERIFICATION CARD */
+    /* ================= OFFICIAL GOVT QR VERIFICATION CARD ================= */
     .qr-standalone-wrapper { min-height: 90vh; display: flex; align-items: center; justify-content: center; padding: 20px 10px; background: #f1f5f9; }
     .gov-qr-card { background: #ffffff; border: 2px solid #0f766e; border-radius: 12px; box-shadow: 0 16px 40px rgba(15, 118, 110, 0.2); width: 100%; max-width: 580px; overflow: hidden; position: relative; }
     .gov-qr-top-strip { background: #0f766e; color: #ffffff; padding: 16px 20px; text-align: center; border-bottom: 3px solid #f59e0b; }

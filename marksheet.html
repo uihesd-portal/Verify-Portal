@@ -33,64 +33,76 @@
     .cert-result { display: none; margin-top: 25px; }
     .cert-invalid { border: 1px solid #fecaca; background: #fef2f2; color: #dc2626; padding: 15px; text-align: center; font-weight: bold; border-radius: 6px; }
 
-    /* ================= A4 PORTRAIT MARKSHEET ================= */
+    /* ================= FULL PAGE EXPANDED A4 PORTRAIT MARKSHEET ================= */
     .marksheet-wrapper {
-      width: 794px; max-width: 100%; margin: 15px auto; background: #ffffff;
-      padding: 12px; border: 1px solid #94a3b8; box-shadow: 0 10px 30px rgba(0,0,0,0.12); box-sizing: border-box;
-      -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
+      width: 794px;
+      max-width: 100%;
+      margin: 15px auto;
+      background: #ffffff;
+      padding: 14px;
+      border: 1px solid #94a3b8;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
     .marksheet-inner {
-      border: 5px double #1e3a8a; outline: 2px solid #b45309; outline-offset: -3px;
-      padding: 22px 25px 18px; position: relative; background: #fffdfa;
-      background-image: radial-gradient(#1e3a8a 0.3px, transparent 0.3px); background-size: 16px 16px;
+      border: 5px double #1e3a8a;
+      outline: 2px solid #b45309;
+      outline-offset: -3px;
+      padding: 28px 30px 24px;
+      position: relative;
+      background: #fffdfa;
+      background-image: radial-gradient(#1e3a8a 0.3px, transparent 0.3px);
+      background-size: 16px 16px;
       box-sizing: border-box;
     }
     .marksheet-inner::before {
       content: "STATEMENT OF MARKS"; position: absolute; top: 52%; left: 50%;
-      transform: translate(-50%, -50%) rotate(-25deg); font-size: 3.8rem; font-weight: 900;
+      transform: translate(-50%, -50%) rotate(-25deg); font-size: 4.2rem; font-weight: 900;
       color: rgba(30, 58, 138, 0.03); pointer-events: none; white-space: nowrap; z-index: 1;
     }
     .marksheet-inner::after {
-      content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 480px; height: 480px;
+      content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px;
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='90' fill='none' stroke='%230f172a' stroke-width='1.5'/><circle cx='100' cy='100' r='86' fill='none' stroke='%230f172a' stroke-width='0.5'/><circle cx='100' cy='100' r='60' fill='none' stroke='%230f172a' stroke-width='1'/><g transform='translate(60, 42) scale(0.8)'><path fill='%230f172a' d='M40,5 C40,2 60,2 60,5 C62,15 75,25 75,40 C75,55 60,65 60,75 L65,85 L35,85 L40,75 C40,65 25,55 25,40 C25,25 38,15 40,5 Z'/><circle cx='50' cy='105' r='14' fill='none' stroke='%230f172a' stroke-width='3'/><circle cx='50' cy='105' r='3' fill='%230f172a'/><path fill='%230f172a' d='M20,125 L80,125 L75,140 L25,140 Z'/><text x='50' y='136' font-size='8' font-weight='bold' text-anchor='middle' fill='%23ffffff'>ਸਤ੍ਯਮੇਵ ਜਯਤੇ</text></g><defs><path id='circlePath' d='M 18, 100 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0'/></defs><text font-family='Arial' font-size='12.5' font-weight='bold' fill='%230f172a' letter-spacing='1.5'><textPath href='%23circlePath' startOffset='50%' text-anchor='middle'>GOVERNMENT OF INDIA • DIRECTORATE GENERAL OF TRAINING •</textPath></text></svg>");
       background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.04; z-index: 1; pointer-events: none;
     }
 
-    .ms-top-meta { display: flex; justify-content: space-between; font-size: 0.74rem; font-weight: 800; color: #334155; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 5px; margin-bottom: 10px; position: relative; z-index: 2; }
-    .ms-header-layout { display: flex; align-items: center; gap: 15px; border-bottom: 2px solid #b45309; padding-bottom: 8px; position: relative; z-index: 2; }
-    .ms-logo { height: 65px; width: 65px; object-fit: contain; }
+    .ms-top-meta { display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 800; color: #334155; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 6px; margin-bottom: 12px; position: relative; z-index: 2; }
+    .ms-header-layout { display: flex; align-items: center; gap: 18px; border-bottom: 2px solid #b45309; padding-bottom: 10px; position: relative; z-index: 2; }
+    .ms-logo { height: 72px; width: 72px; object-fit: contain; }
     .ms-title-block { flex: 1; text-align: center; }
-    .ms-title-block h3 { font-size: 0.68rem; color: #b45309; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
-    .ms-title-block h1 { font-size: 1.1rem; color: #0b1f3a; font-family: 'Cinzel', serif; font-weight: 900; }
-    .ms-title-block p { font-size: 0.62rem; color: #166534; font-weight: 800; text-transform: uppercase; margin-top: 1px; }
+    .ms-title-block h3 { font-size: 0.72rem; color: #b45309; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+    .ms-title-block h1 { font-size: 1.2rem; color: #0b1f3a; font-family: 'Cinzel', serif; font-weight: 900; }
+    .ms-title-block p { font-size: 0.66rem; color: #166534; font-weight: 800; text-transform: uppercase; margin-top: 2px; }
 
-    .ms-doc-title { text-align: center; margin: 10px 0 8px; position: relative; z-index: 2; }
-    .ms-doc-title h2 { font-size: 1.05rem; color: #172b53; font-family: 'Cinzel', serif; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; border-bottom: 2px double #172b53; display: inline-block; padding-bottom: 2px; }
+    .ms-doc-title { text-align: center; margin: 14px 0 10px; position: relative; z-index: 2; }
+    .ms-doc-title h2 { font-size: 1.15rem; color: #172b53; font-family: 'Cinzel', serif; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; border-bottom: 2px double #172b53; display: inline-block; padding-bottom: 3px; }
 
-    .candidate-info-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 0.78rem; position: relative; z-index: 2; background: rgba(255,255,255,0.9); }
-    .candidate-info-table td { padding: 5px 8px; border: 1px solid #cbd5e1; }
+    .candidate-info-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 0.82rem; position: relative; z-index: 2; background: rgba(255,255,255,0.9); }
+    .candidate-info-table td { padding: 7px 10px; border: 1px solid #cbd5e1; }
     .candidate-info-table td.lbl { font-weight: 800; color: #475569; width: 25%; background: #f8fafc; }
     .candidate-info-table td.val { font-weight: 900; color: #0b1f3a; width: 25%; }
 
-    .marks-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 0.78rem; position: relative; z-index: 2; background: rgba(255,255,255,0.95); }
-    .marks-table th, .marks-table td { border: 1px solid #94a3b8; padding: 6px 8px; text-align: center; }
-    .marks-table th { background: #172b53; color: #ffffff; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .marks-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 0.82rem; position: relative; z-index: 2; background: rgba(255,255,255,0.95); }
+    .marks-table th, .marks-table td { border: 1px solid #94a3b8; padding: 9px 10px; text-align: center; }
+    .marks-table th { background: #172b53; color: #ffffff; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
     .marks-table td.sub-name { text-align: left; font-weight: 800; color: #0f172a; }
 
-    .footer-logos-strip { display: flex; justify-content: space-around; align-items: center; background: rgba(250,250,250,0.9); border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 8px; margin-bottom: 8px; position: relative; z-index: 2; }
-    .f-logo-item { display: flex; align-items: center; gap: 5px; }
-    .f-logo-item img { height: 28px; width: auto; max-width: 60px; object-fit: contain; }
-    .f-logo-item span { font-size: 0.5rem; font-weight: 800; color: #1e3a8a; line-height: 1; text-transform: uppercase; }
+    .footer-logos-strip { display: flex; justify-content: space-around; align-items: center; background: rgba(250,250,250,0.9); border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px 10px; margin-bottom: 14px; position: relative; z-index: 2; }
+    .f-logo-item { display: flex; align-items: center; gap: 6px; }
+    .f-logo-item img { height: 32px; width: auto; max-width: 65px; object-fit: contain; }
+    .f-logo-item span { font-size: 0.52rem; font-weight: 800; color: #1e3a8a; line-height: 1.1; text-transform: uppercase; }
 
-    .ms-footer-row { display: flex; justify-content: space-between; align-items: flex-end; position: relative; z-index: 2; border-top: 1px dashed #cbd5e1; padding-top: 8px; }
-    .qr-box-wrap { text-align: center; background: white; padding: 3px; border: 1px solid #cbd5e1; border-radius: 4px; }
+    .ms-footer-row { display: flex; justify-content: space-between; align-items: flex-end; position: relative; z-index: 2; border-top: 1px dashed #cbd5e1; padding-top: 12px; }
+    .qr-box-wrap { text-align: center; background: white; padding: 4px; border: 1px solid #cbd5e1; border-radius: 4px; }
     #qrcodeMs { display: inline-block; }
-    .qr-lbl { font-size: 0.5rem; font-weight: 800; margin-top: 1px; text-transform: uppercase; }
+    .qr-lbl { font-size: 0.52rem; font-weight: 800; margin-top: 2px; text-transform: uppercase; }
 
-    .user-uploaded-seal { width: 75px; height: 75px; object-fit: contain; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3)); }
-    .sign-col { text-align: center; font-size: 0.68rem; font-weight: 800; color: #1e3a8a; width: 120px; }
-    .sign-line { border-bottom: 1.5px solid #0f172a; margin-bottom: 2px; height: 22px; }
-    .btn-print { background: #16a34a; color: white; border: none; padding: 11px 26px; font-weight: bold; border-radius: 5px; cursor: pointer; font-size: 0.9rem; margin: 20px auto 0; display: block; }
+    .user-uploaded-seal { width: 85px; height: 85px; object-fit: contain; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3)); }
+    .sign-col { text-align: center; font-size: 0.72rem; font-weight: 800; color: #1e3a8a; width: 130px; }
+    .sign-line { border-bottom: 1.5px solid #0f172a; margin-bottom: 3px; height: 26px; }
+    .btn-print { background: #16a34a; color: white; border: none; padding: 12px 28px; font-weight: bold; border-radius: 5px; cursor: pointer; font-size: 0.95rem; margin: 20px auto 0; display: block; }
 
     /* ================= OFFICIAL GOVT QR VERIFICATION CARD ================= */
     .qr-standalone-wrapper { min-height: 90vh; display: flex; align-items: center; justify-content: center; padding: 20px 10px; background: #f1f5f9; }
@@ -109,7 +121,7 @@
     .gov-qr-table td.gov-field-val { width: 60%; color: #0f172a; font-weight: 800; }
     .gov-qr-footer-seal { background: #f8fafc; padding: 14px 20px; text-align: center; border-top: 1px solid #e2e8f0; font-size: 0.75rem; font-weight: 800; color: #065f46; line-height: 1.4; }
 
-    /* EXACT A4 PORTRAIT PRINT RULE */
+    /* EXACT A4 PORTRAIT PRINT */
     @page { size: A4 portrait; margin: 0; }
     @media print {
       html, body {
@@ -129,7 +141,7 @@
         width: 210mm !important;
         height: 297mm !important;
         margin: 0 !important;
-        padding: 10mm 15mm !important;
+        padding: 8mm 12mm !important;
         border: none !important;
         box-shadow: none !important;
       }
@@ -185,7 +197,6 @@
     </footer>
   </div>
 
-  <!-- QR SCAN ISOLATED GOVT PORTAL CARD -->
   <div id="qrScanIsolatedContainer" style="display:none;" class="qr-standalone-wrapper"></div>
 
   <script>
@@ -254,12 +265,12 @@
                   <tr><td><b>105</b></td><td class="sub-name">Formative Assessment (Internal)</td><td>200</td><td>120</td><td><b>178</b></td><td style="color:#15803d; font-weight:bold;">Pass (A+)</td></tr>
                   <tr style="background:#f8fafc; font-weight:900;">
                     <td colspan="2" style="text-align:right;">TOTAL AGGREGATE MARKS:</td>
-                    <td>650</td><td>337</td><td style="color:#b91c1c; font-size:0.9rem;">571</td><td style="color:#16a34a; font-size:0.9rem;">91.5% (Distinction)</td>
+                    <td>650</td><td>337</td><td style="color:#b91c1c; font-size:0.95rem;">571</td><td style="color:#16a34a; font-size:0.95rem;">91.5% (Distinction)</td>
                   </tr>
                 </tbody>
               </table>
 
-              <div style="font-size:0.75rem; font-weight:800; color:#1e293b; margin-bottom:8px; text-align:center;">
+              <div style="font-size:0.82rem; font-weight:800; color:#1e293b; margin-bottom:12px; text-align:center;">
                 Overall Final Result: <span style="color:#15803d;">PASSED WITH DISTINCTION (${s.grade || 'Grade A+'})</span>
               </div>
 
@@ -285,10 +296,9 @@
           const qr = document.getElementById("qrcodeMs");
           if (qr) {
             qr.innerHTML = "";
-            // LINK GENERATED FOR GOVT VERIFICATION SLIP ON SCAN
             new QRCode(qr, {
               text: window.location.origin + window.location.pathname + "?verify=" + encodeURIComponent(s.uniqueId),
-              width: 70, height: 70, colorDark: "#000000", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M
+              width: 75, height: 75, colorDark: "#000000", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M
             });
           }
         }, 50);
@@ -298,7 +308,6 @@
       }
     }
 
-    // STRICT ISOLATED VIEW WHEN QR IS SCANNED
     window.onload = function() {
       const urlParams = new URLSearchParams(window.location.search);
       const scanVerifyUID = urlParams.get('verify') || urlParams.get('roll');
@@ -358,6 +367,7 @@
           `;
         }
       } else {
+        renderTable();
         const params = new URLSearchParams(window.location.search);
         const v = params.get('verify') || params.get('roll');
         if (v) {
